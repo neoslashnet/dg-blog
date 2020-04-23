@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { withPrefix } from 'gatsby';
 import NinjaComments from 'remark-ninja-react';
-import secretConfs from '../../../../secrets'
+// import secretConfs from '../../../../secrets'
 import styles from './Comments.module.scss';
 
 const Comments = ({ postSlug }) => {
@@ -50,7 +50,7 @@ const Comments = ({ postSlug }) => {
         {' '} đều đc nhé!
       </h5>
       <NinjaComments
-        siteId={secretConfs.ninjaCommentSiteId}
+        // siteId={secretConfs.ninjaCommentSiteId}
         threadSlug={postSlug}
       />
     </div>
