@@ -3,37 +3,10 @@ const colors = require('tailwindcss/colors')
 
 module.exports = {
   mode: 'jit',
-  purge: [
-    './pages/**/*.js',
-    './data/blog/*.mdx',
-    './components/**/*.js',
-    './layouts/**/*.js',
-    './lib/**/*.js',
-    './safelist.txt',
-  ],
+  purge: ['./pages/**/*.js', './components/**/*.js', './layouts/**/*.js', './lib/**/*.js'],
   darkMode: 'class',
   theme: {
     extend: {
-      keyframes: {
-        wiggle: {
-          '0%': { transform: 'rotate(0deg)' },
-          '50%': { transform: 'rotate(180deg)' },
-          '100%': { transform: 'rotate(360deg)' },
-        },
-        'music-play': {
-          '0%, 100%': { height: '100%' },
-          '50%': { height: '50%' },
-        },
-        'music-play-reverse': {
-          '0%, 100%': { height: '50%' },
-          '50%': { height: '100%' },
-        },
-      },
-      animation: {
-        wiggle: 'wiggle 7s linear infinite',
-        'music-play': 'music-play 1s linear infinite',
-        'music-play-reverse': 'music-play-reverse 1s linear infinite',
-      },
       spacing: {
         '9/16': '56.25%',
       },
@@ -47,16 +20,8 @@ module.exports = {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: colors.indigo,
+        primary: colors.teal,
         gray: colors.trueGray,
-        code: {
-          green: '#b5f4a5',
-          yellow: '#ffe484',
-          purple: '#d9a9ff',
-          red: '#ff8383',
-          blue: '#93ddfd',
-          white: '#fff',
-        },
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -83,9 +48,6 @@ module.exports = {
               fontWeight: '600',
               color: theme('colors.gray.900'),
             },
-            h4: {
-              fontSize: '1.166667em',
-            },
             'h4,h5,h6': {
               color: theme('colors.gray.900'),
             },
@@ -103,6 +65,14 @@ module.exports = {
             },
             'code:after': {
               content: 'none',
+            },
+            details: {
+              backgroundColor: theme('colors.gray.100'),
+              paddingLeft: '4px',
+              paddingRight: '4px',
+              paddingTop: '2px',
+              paddingBottom: '2px',
+              borderRadius: '0.25rem',
             },
             hr: { borderColor: theme('colors.gray.200') },
             'ol li:before': {
@@ -147,6 +117,9 @@ module.exports = {
               color: theme('colors.gray.100'),
             },
             code: {
+              backgroundColor: theme('colors.gray.800'),
+            },
+            details: {
               backgroundColor: theme('colors.gray.800'),
             },
             hr: { borderColor: theme('colors.gray.700') },

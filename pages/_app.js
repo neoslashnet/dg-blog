@@ -1,12 +1,12 @@
 import '@/css/tailwind.css'
-import '@/css/twemoji.css'
-import '@/css/timeline.css'
+import '@/css/prism.css'
 
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
 
 import Analytics from '@/components/analytics'
 import LayoutWrapper from '@/components/LayoutWrapper'
+import RSS from '@/components/Rss'
 
 export default function App({ Component, pageProps }) {
   return (
@@ -18,6 +18,7 @@ export default function App({ Component, pageProps }) {
       <LayoutWrapper>
         <Component {...pageProps} />
       </LayoutWrapper>
+      <RSS />
     </ThemeProvider>
   )
 }
