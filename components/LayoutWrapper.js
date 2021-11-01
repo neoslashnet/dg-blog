@@ -7,6 +7,7 @@ import SectionContainer from './SectionContainer'
 import Footer from './Footer'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
+import NextImage from 'next/image'
 
 import useTranslation from 'next-translate/useTranslation'
 import { useRouter } from 'next/router'
@@ -24,20 +25,25 @@ const LayoutWrapper = ({ children }) => {
   return (
     <SectionContainer>
       <div className="flex flex-col justify-between h-screen">
-        <header className="flex items-center justify-between py-10">
+        <header className="flex items-center justify-between py-5 md:py-10 sticky top-0 z-40 bg-white dark:bg-gray-900">
           <div>
-            <Link href="/" aria-label="Tailwind CSS Blog">
+            <Link href="/" aria-label={siteMetadata.title}>
               <div className="flex items-center justify-between">
-                <div className="mr-3">
-                  <Logo />
+                <div className="mr-3 flex justify-center items-center">
+                  <NextImage
+                    src="/static/images/logo.jpg"
+                    width={50}
+                    height={50}
+                    className="rounded-full"
+                  />
                 </div>
-                {typeof siteMetadata.headerTitle[locale] === 'string' ? (
+                {/* {typeof siteMetadata.headerTitle[locale] === 'string' ? (
                   <div className="hidden h-6 text-2xl font-semibold sm:block">
                     {siteMetadata.headerTitle[locale]}
                   </div>
                 ) : (
                   siteMetadata.headerTitle[locale]
-                )}
+                )} */}
               </div>
             </Link>
           </div>
@@ -49,7 +55,7 @@ const LayoutWrapper = ({ children }) => {
                   href={link.href}
                   className="p-1 font-medium text-gray-900 sm:p-4 dark:text-gray-100"
                 >
-                  {t(`headerNavLinks:${link.title.toLowerCase()}`)}
+                  {link.title}
                 </Link>
               ))}
             </div>
