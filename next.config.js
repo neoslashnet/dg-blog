@@ -11,6 +11,9 @@ module.exports = nextTranslate(
     eslint: {
       dirs: ['pages', 'components', 'lib', 'layouts', 'scripts'],
     },
+    images: {
+      domains: ['img.shields.io', 'i.scdn.co'],
+    },
     experimental: { esmExternals: true },
     webpack: (config, { dev, isServer }) => {
       config.module.rules.push({
