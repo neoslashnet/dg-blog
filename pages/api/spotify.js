@@ -8,7 +8,6 @@ export default async (req, res) => {
   }
 
   const song = await response.json()
-  console.log('=========> - song', song)
   const isPlaying = song.is_playing
   const title = song.item.name
   const artist = song.item.artists.map((art) => art.name).join(', ')

@@ -88,10 +88,11 @@ const Spotify = ({ data }) => {
       <div className="ml-2 inline-flex items-center truncate">
         {data?.songUrl ? (
           <>
-            <div className="h-5 flex items-center mr-3">
-              <div className="bg-[#1DB954] w-1.5 rounded-sm h-full animate-music-play"></div>
-              <div className="bg-[#1DB954] mx-1 w-1.5 rounded-sm h-1/2 animate-music-play-reverse"></div>
-              <div className="bg-[#1DB954] w-1.5 rounded-sm h-full animate-music-play"></div>
+            <div className="h-5 flex items-end mr-2 pt-1.5">
+              <div className="bg-[#1DB954] w-0.5 h-full animate-music-play-1"></div>
+              <div className="bg-[#1DB954] mx-0.5 w-0.5 h-1/2 animate-music-play-2"></div>
+              <div className="bg-[#1DB954] w-0.5 h-full animate-music-play-3"></div>
+              <div className="bg-[#1DB954] mx-0.5 w-0.5 h-1/2 animate-music-play-4"></div>
             </div>
             <a
               className="text-gray-200 font-medium"
