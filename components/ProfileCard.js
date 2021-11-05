@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from './Image'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import useSWR from 'swr'
 import fetcher from '@/lib/fetcher'
