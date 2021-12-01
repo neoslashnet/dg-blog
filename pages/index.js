@@ -6,7 +6,8 @@ import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 import useTranslation from 'next-translate/useTranslation'
 
-import NewsletterForm from '@/components/NewsletterForm'
+// import NewsletterForm from '@/components/NewsletterForm'
+import Greeting from '@/components/Greeting'
 
 const MAX_DISPLAY = 5
 
@@ -23,19 +24,12 @@ export default function Home({ posts, locale, availableLocales }) {
   return (
     <>
       <PageSEO
-        title={siteMetadata.title[locale]}
-        description={siteMetadata.description[locale]}
+        title={siteMetadata.title}
+        description={siteMetadata.description}
         availableLocales={availableLocales}
       />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="pt-6 pb-8 space-y-2 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            {t('common:greeting')}
-          </h1>
-          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            {siteMetadata.description[locale]}
-          </p>
-        </div>
+        <Greeting locale={locale} />
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
@@ -47,13 +41,13 @@ export default function Home({ posts, locale, availableLocales }) {
                     <dl>
                       <dt className="sr-only">{t('common:pub')}</dt>
                       <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                        <time dateTime={date}>{formatDate(date, locale)}</time>
+                        <time dateTime={date}>{formatDate(date)}</time>
                       </dd>
                     </dl>
                     <div className="space-y-5 xl:col-span-3">
                       <div className="space-y-6">
                         <div>
-                          <h2 className="text-2xl font-bold leading-8 tracking-tight">
+                          <h2 className="text-3xl font-bold mb-1 tracking-tight">
                             <Link
                               href={`/blog/${slug}`}
                               className="text-gray-900 dark:text-gray-100"
@@ -77,7 +71,7 @@ export default function Home({ posts, locale, availableLocales }) {
                           className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                           aria-label={`Read "${title}"`}
                         >
-                          {t('common:more')} &rarr;
+                          Read more &rarr;
                         </Link>
                       </div>
                     </div>
@@ -95,15 +89,15 @@ export default function Home({ posts, locale, availableLocales }) {
             className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
             aria-label="all posts"
           >
-            {t('common:all')} &rarr;
+            All Posts &rarr;
           </Link>
         </div>
       )}
-      {siteMetadata.newsletter.provider !== '' && (
+      {/* {siteMetadata.newsletter.provider !== '' && (
         <div className="flex items-center justify-center pt-4">
           <NewsletterForm title={t('newsletter:title')} />
         </div>
-      )}
+      )} */}
     </>
   )
 }

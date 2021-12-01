@@ -1,22 +1,25 @@
 const siteMetadata = {
-  title: { en: 'Next.js Starter Blog', fr: 'Starter de blog NextJs' },
+  title: "Leo's blog",
   author: 'Tails Azimuth',
-  headerTitle: { en: 'TailwindBlog', fr: 'blog Tailwind' },
+  headerTitle: "Leo's blog",
+  footerTitle: "Leo's coding journey",
   // description: 'A blog created with Next.js and Tailwind.css',
-  description: { en: 'en description', fr: 'Description en fr' },
+  description:
+    "Leo's coding journey - chuyện lập trình, công việc và cuộc sống qua bàn phím của Tuấn Anh",
+  snippets: 'Reuseable code snippets collected by Leo',
   language: 'en-us',
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
-  siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
-  siteLogo: '/static/images/logo.png',
-  image: '/static/images/avatar.png',
+  siteUrl: 'https://www.leohuynh.dev',
+  siteRepo: 'https://github.com/hta218/leo-blog',
+  siteLogo: '/static/images/logo.jpg',
+  image: '/static/images/logo.jpg',
   socialBanner: '/static/images/twitter-card.png',
-  email: 'address@yoursite.com',
-  github: 'https://github.com',
-  twitter: 'https://twitter.com/Twitter',
-  facebook: 'https://facebook.com',
-  youtube: 'https://youtube.com',
-  linkedin: 'https://www.linkedin.com',
-  locale: 'en-US',
+  email: 'huynhtuananh21895@gmail.com',
+  github: 'https://github.com/hta218',
+  twitter: 'https://twitter.com/hta218_',
+  facebook: 'https://facebook.com/hta218',
+  youtube: 'https://www.youtube.com/channel/UCHXjj6ewfDIjx_Op3hqijlg',
+  linkedin: 'https://www.linkedin.com/in/hta218/',
+  locale: 'vi',
   analytics: {
     // supports plausible, simpleAnalytics or googleAnalytics
     plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
@@ -26,7 +29,7 @@ const siteMetadata = {
   newsletter: {
     // supports mailchimp, buttondown, convertkit
     // Please add your .env file and modify it according to your selection
-    provider: 'buttondown',
+    // provider: 'buttondown',
   },
   comment: {
     // Select a provider and use the environment variables associated to it
@@ -39,7 +42,7 @@ const siteMetadata = {
       repositoryId: process.env.NEXT_PUBLIC_GISCUS_REPOSITORY_ID,
       category: process.env.NEXT_PUBLIC_GISCUS_CATEGORY,
       categoryId: process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID,
-      mapping: 'pathname', // supported options: pathname, url, title
+      mapping: 'title', // supported options: pathname, url, title
       reactions: '1', // Emoji reactions: 1 = enable / 0 = disable
       // Send discussion metadata periodically to the parent window: 1 = enable / 0 = disable
       metadata: '0',
@@ -69,6 +72,9 @@ const siteMetadata = {
       // https://help.disqus.com/en/articles/1717111-what-s-a-shortname
       shortname: process.env.NEXT_PUBLIC_DISQUS_SHORTNAME,
     },
+  },
+  socialAccount: {
+    twitter: 'hta218_',
   },
 }
 

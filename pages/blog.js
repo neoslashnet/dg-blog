@@ -3,8 +3,6 @@ import siteMetadata from '@/data/siteMetadata'
 import ListLayout from '@/layouts/ListLayout'
 import { PageSEO } from '@/components/SEO'
 
-import useTranslation from 'next-translate/useTranslation'
-
 export const POSTS_PER_PAGE = 5
 
 export async function getStaticProps({ locale, defaultLocale, locales }) {
@@ -22,7 +20,6 @@ export async function getStaticProps({ locale, defaultLocale, locales }) {
 }
 
 export default function Blog({ posts, initialDisplayPosts, pagination, locale, availableLocales }) {
-  const { t } = useTranslation()
   return (
     <>
       <PageSEO
@@ -34,7 +31,7 @@ export default function Blog({ posts, initialDisplayPosts, pagination, locale, a
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
-        title={t('common:all')}
+        title="All Posts"
       />
     </>
   )

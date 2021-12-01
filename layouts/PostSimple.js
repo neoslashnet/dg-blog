@@ -9,14 +9,7 @@ import useTranslation from 'next-translate/useTranslation'
 import { useRouter } from 'next/router'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 
-export default function PostLayout({
-  frontMatter,
-  authorDetails,
-  next,
-  prev,
-  availableLocales,
-  children,
-}) {
+export default function PostLayout({ frontMatter, next, prev, availableLocales, children }) {
   const { date, title } = frontMatter
   const { t } = useTranslation()
   const { locale } = useRouter()

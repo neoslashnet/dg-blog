@@ -14,7 +14,7 @@ import { useRouter } from 'next/router'
 const LayoutWrapper = ({ children }) => {
   const { t } = useTranslation()
   const router = useRouter()
-  const { locale, locales, defaultLocale } = router
+  const { locale, locales } = router
 
   const changeLanguage = (e) => {
     const locale = e.target.value
@@ -64,9 +64,9 @@ const LayoutWrapper = ({ children }) => {
               style={{ textAlignLast: 'center' }}
               className="text-gray-900 dark:text-gray-100 text-shadow-sm text-sm bg-transparent tracking-wide"
             >
-              {locales.map((e) => (
-                <option value={e} key={e}>
-                  {e}
+              {locales.map((locale) => (
+                <option value={locale} key={locale}>
+                  {locale}
                 </option>
               ))}
             </select>

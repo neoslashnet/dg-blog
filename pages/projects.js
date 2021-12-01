@@ -1,40 +1,61 @@
 import siteMetadata from '@/data/siteMetadata'
 import projectsData from '@/data/projectsData'
-import Card from '@/components/Card'
+import ProjectCard from '@/components/ProjectCard'
 import { PageSEO } from '@/components/SEO'
-import useTranslation from 'next-translate/useTranslation'
 
 export async function getStaticProps({ locale, locales }) {
   return { props: { locale, availableLocales: locales } }
 }
 
 export default function Projects({ locale, availableLocales }) {
-  const { t } = useTranslation()
+  const workProjects = projectsData.filter(({ type }) => type === 'work')
+  const sideProjects = projectsData.filter(({ type }) => type === 'self')
   return (
     <>
       <PageSEO
-        title={`${t('headerNavLinks:projects')} - ${siteMetadata.author}`}
+        title={`Projects - ${siteMetadata.author}`}
         description={siteMetadata.description[locale]}
         availableLocales={availableLocales}
       />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="pt-6 pb-8 space-y-2 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            {t('projects:title')}
+            Projects
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            {t('projects:subtitle')}
+            My open source side projects and stuff that I built with my colleagues at work
           </p>
         </div>
         <div className="container py-12">
+          <h3 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 mb-4">
+            Work
+          </h3>
           <div className="flex flex-wrap -m-4">
-            {projectsData[locale]?.map((d) => (
-              <Card
-                key={d.title}
-                title={d.title}
-                description={d.description}
-                imgSrc={d.imgSrc}
-                href={d.href}
+            {workProjects.map((project) => (
+              <ProjectCard
+                key={project.title}
+                title={project.title}
+                description={project.description}
+                imgSrc={project.imgSrc}
+                href={project.href}
+                repoName={project.repoName}
+              />
+            ))}
+          </div>
+        </div>
+        <div className="container py-12">
+          <h3 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 mb-4">
+            Side Projects
+          </h3>
+          <div className="flex flex-wrap -m-4">
+            {sideProjects.map((project) => (
+              <ProjectCard
+                key={project.title}
+                title={project.title}
+                description={project.description}
+                imgSrc={project.imgSrc}
+                href={project.href}
+                repoName={project.repoName}
               />
             ))}
           </div>
