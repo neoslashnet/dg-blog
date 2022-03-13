@@ -163,7 +163,7 @@ const ProfileInfo = () => (
       </svg>
 
       <p className="px-2 text-[15px]">
-        [::1]:443 - Petaluma, CA,
+        [::1]:443 - Petaluma CA,
         <span className="align-middle flag-us ml-1">
           <Twemoji emoji="flag-United States 🇺🇸" />
         </span>
