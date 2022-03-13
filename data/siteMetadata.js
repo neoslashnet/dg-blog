@@ -4,7 +4,7 @@ const siteMetadata = {
   headerTitle: "David Galiata - neoslash.net",
   footerTitle: "David Galiata - neoslash.net",
   description:
-    "Leo's coding journey - programming, working and life stories through the keyboard of an open minded Software Engineer",
+    "Welcome to my blog 👋 I am a Security Architect at Aquia.us. I write about IT, Cloud, and Security.",
   snippets: 'Reuseable code snippets collected by Leo',
   language: 'en-us',
   siteUrl: 'https://neoslash.net',
