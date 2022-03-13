@@ -69,7 +69,7 @@ const ProfileCard = () => {
           />
           <Spotify data={data} />
           <ProfileInfo />
-          <span className="h-1.5 bg-gradient-to-r from-gray-900 via-blue-500 to-purple-600"></span>
+          <span className="h-1.5 bg-gradient-to-r from-gray-900 via-green-500 to-purple-800"></span>
         </div>
       </div>
     </>
