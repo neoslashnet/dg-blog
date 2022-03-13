@@ -69,7 +69,7 @@ const ProfileCard = () => {
           />
           <Spotify data={data} />
           <ProfileInfo />
-          <span className="h-1.5 bg-gradient-to-r from-bluegray-600 via-blue-500 to-purple-600"></span>
+          <span className="h-1.5 bg-gradient-to-r from-gray-900 via-blue-500 to-purple-600"></span>
         </div>
       </div>
     </>
@@ -165,7 +165,7 @@ const ProfileInfo = () => (
       <p className="px-2 text-[15px]">
         [::1]:443 - Petaluma
         <span className="align-middle flag-us ml-1">
-          <Twemoji emoji="flag-us" />
+          <Twemoji emoji="flag-united-states" />
         </span>
       </p>
     </div>
