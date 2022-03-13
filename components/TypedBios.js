@@ -27,10 +27,10 @@ const TypedBios = () => {
         </li>
         <li>I'm a builder, learner and freedom seeker.</li>
         <li>
-          I live in <b className="font-medium">Ha Noi, Viet Nam</b>.
+          I live in <b className="font-medium">The SF Bay Area</b>.
         </li>
         <li>
-          I was born in the beautiful <b className="font-medium">Moc Chau</b> plateau.
+          I was born in the beautiful <b className="font-medium">Sonoma</b> County.
         </li>
         <li>
           My first programming language I learned was <b className="font-medium">Pascal</b>.
@@ -43,7 +43,7 @@ const TypedBios = () => {
           I'm a dog person <Twemoji emoji="dog" />
         </li>
         <li>
-          I'm a sport-guy. I love
+          I'm a sports-guy. I love
           <span className="ml-1">
             <Twemoji emoji="soccer-ball" />,
             <Twemoji emoji="man-swimming" />,
@@ -55,9 +55,9 @@ const TypedBios = () => {
         <li>
           I love playing guitar <Twemoji emoji="guitar" />
         </li>
-        <li>I love rock music.</li>
+        <li>I love music.</li>
         <li>
-          I love playing video game <Twemoji emoji="video-game" />, PES is my favorite one.
+          I love playing video games <Twemoji emoji="video-game" />, with my kids.
         </li>
       </ul>
       <span ref={el} className="text-neutral-900 dark:text-neutral-200" />
