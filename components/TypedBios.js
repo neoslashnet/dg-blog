@@ -25,7 +25,7 @@ const TypedBios = () => {
         <li>
           I'm aliased as <b className="font-medium">Leo</b> at work.
         </li>
-        <li>I'm a builder, learner and freedom seeker.</li>
+        <li>I'm a father, builder, and learner.</li>
         <li>
           I live in <b className="font-medium">The SF Bay Area</b>.
         </li>
