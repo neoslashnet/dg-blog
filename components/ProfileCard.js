@@ -165,7 +165,7 @@ const ProfileInfo = () => (
       <p className="px-2 text-[15px]">
         [::1]:443 - Petaluma,CA
         <span className="align-middle flag-us ml-1">
-          <Twemoji emoji="flag_united_states" />
+          <Twemoji emoji="flag_united_states:" />
         </span>
       </p>
     </div>
