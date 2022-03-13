@@ -26,7 +26,7 @@ const siteMetadata = {
     umamiWebsiteId: false, // e.g. 123e4567-e89b-12d3-a456-426614174000
     googleAnalyticsId: 'UA-164140501-1', // e.g. UA-000000-2 or G-XXXXXXX
   },
-  //comment: {
+  comment: {
     // Select a provider and use the environment variables associated to it
     // https://vercel.com/docs/environment-variables
     //provider: 'giscus', // supported providers: giscus, utterances, disqus
@@ -67,7 +67,7 @@ const siteMetadata = {
       // https://help.disqus.com/en/articles/1717111-what-s-a-shortname
       //shortname: process.env.NEXT_PUBLIC_DISQUS_SHORTNAME,
     //},
-  //},
+  },
   socialAccount: {
     twitter: 'neoslashnet',
   },
