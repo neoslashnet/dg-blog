@@ -163,9 +163,9 @@ const ProfileInfo = () => (
       </svg>
 
       <p className="px-2 text-[15px]">
-        [::1]:443 - Petaluma,CA
+        [::1]:443 - Petaluma
         <span className="align-middle flag-us ml-1">
-          <Twemoji emoji="flag-United States 🇺🇸" />
+          <Twemoji emoji="flag-us" />
         </span>
       </p>
     </div>
@@ -204,7 +204,7 @@ const ProfileInfo = () => (
       </svg>
       <p className="px-2 text-[15px]">
         <a target="_blank" href="https://linkedin.com/in/dgaliata" rel="noreferrer">
-          li/neoslashnet
+          li/dgaliata
         </a>
         ,{' '}
         <a target="_blank" href="https://twitter.com/neoslashnet" rel="noreferrer">
