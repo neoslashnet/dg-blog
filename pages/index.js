@@ -58,7 +58,7 @@ export default function Home({ posts }) {
                   <Twemoji emoji="face-with-monocle" /> More about me and myself
                 </Link>
                 <Link href="https://galiata.com" className="hover:underline">
-                  <Twemoji emoji="briefcase" /> My personal site
+                  <Twemoji emoji="globe" /> My personal site
                 </Link>
               </div>
               <p className="my-8">
