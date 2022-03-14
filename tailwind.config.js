@@ -60,7 +60,7 @@ module.exports = {
         sans: ['JetBrains Mono', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: colors.indigo,
+        primary: colors.lightBlue,
         gray: colors.gray,
         dark: '#111827',
         code: {
