@@ -50,11 +50,11 @@ const TypedBios = () => {
         </li>
         <li>I love spending time with my family.</li>
         <li>
-          I love music <Twemoji emoji="guitar" />
+            I love music <Twemoji emoji="guitar" />
         </li>
         <li>I love pizza.</li>
         <li>
-          I love playing video games <Twemoji emoji="video-game" />,with my kids.
+            I love playing video games <Twemoji emoji="video-game" />,with my kids.
         </li>
       </ul>
       <span ref={el} className="text-neutral-900 dark:text-neutral-200" />
