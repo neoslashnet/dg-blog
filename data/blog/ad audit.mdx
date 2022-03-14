@@ -1,0 +1,22 @@
+---
+title: 'Active Directory Audit'
+date: '2019-12-09'
+tags: ['PowerShell','Microsoft']
+draft: false
+---
+I am starting to audit AD for my clients every month just to make sure accounts that should be disabled are not enabled. User accounts of old employees or shared devices such as printers and scanners are easy targets.  
+  
+
+I wrote this script to audit AD. It will produce a CSV file that shows the username, date the account was created, and the last known log on date.
+
+```
+
+Get-ADUser -Filter {Enabled -eq $true} -Properties whenCreated,sAMAccountName,LastLogonDate 
+| Select-Object sAMAccountName,Name,whenCreated,LastLogonDate | Export-Csv -path 
+"c:\\temp\\adaudit.csv" -NoTypeInformation  
+$a = "Active users: " + ((Get-ADUser -Filter {Enabled -eq $true}).count | Out-String)  
+Out-File -append -filepath "c:\\temp\\adaudit.csv" -inputobject $a -encoding ASCII
+
+```
+
+You can also add more properties you'd like. Here is the full list- [https://social.technet.microsoft.com/wiki/contents/articles/12037.active-directory-get-aduser-default-and-extended-properties.aspx](https://social.technet.microsoft.com/wiki/contents/articles/12037.active-directory-get-aduser-default-and-extended-properties.aspx "https://social.technet.microsoft.com/wiki/contents/articles/12037.active-directory-get-aduser-default-and-extended-properties.aspx")

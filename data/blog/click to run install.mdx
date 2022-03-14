@@ -1,0 +1,64 @@
+---
+title: 'Install Office 365 Click to Run'
+date: '2020-10-07'
+tags: ['Microsoft', 'Cloud']
+draft: false
+---
+The last couple months I've been working with Citrix VDA and RDS servers. I've had to install office via Click to Run. The overall process is pretty straight forward but I did run into a little bit of a snag on confirming the exact Product ID I needed for my installation. The link below has the exact Product ID's for each version you may need. 
+
+## The install process
+
+The first step is to create a directory on the system/server. I normally create a folder called c:\support\365
+
+Next you'll need to download the  [Office Deployment Tool](https://www.microsoft.com/en-us/download/details.aspx?id=49117) extract the files to the folder you recently created- c:\support\365
+
+Then open a command prompt window, change into the c:\support\365 directory and execute the following command- 
+
+
+```
+setup.exe /download
+``` 
+This will download the Office software to the folder. 
+
+After this is complete, you can install by executing the following command which uses a configuration file- configuration.xml. I included a sample of the one I've been using for reference. 
+
+
+```
+setup.exe /configure configuration.xml
+``` 
+
+Executing this command will begin the Office installation process. 
+
+**Sample of my configuration.xml file-**
+
+
+```
+<!-- Office 365 client configuration file sample. To be used for Office 365 ProPlus apps, 
+     Office 365 Business apps, Project Pro for Office 365 and Visio Pro for Office 365. 
+
+     For detailed information regarding configuration options visit: http://aka.ms/ODT. 
+     To use the configuration file be sure to remove the comments
+
+     The following sample allows you to download and install the 64 bit version of the Office 365 ProPlus apps 
+     and Visio Pro for Office 365 directly from the Office CDN using the Monthly Channel
+     settings  -->
+
+<Configuration>
+
+  <Add OfficeClientEdition="64" Channel="Monthly">
+    <Product ID="O365BusinessRetail">
+      <Language ID="en-us" />
+    </Product>
+    </Add>
+
+  <!--  <Updates Enabled="TRUE" Channel="Monthly" /> -->
+
+  <!--  <Display Level="None" AcceptEULA="TRUE" />  -->
+
+  <!--  <Property Name="AUTOACTIVATE" Value="1" />  -->
+
+</Configuration>
+
+``` 
+
+Here is a list of all the  [Product ID's](https://docs.microsoft.com/en-us/office365/troubleshoot/installation/product-ids-supported-office-deployment-click-to-run) for Office products that are compatible with the Office Deployment tool.. 

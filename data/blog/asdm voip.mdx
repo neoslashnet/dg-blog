@@ -1,0 +1,52 @@
+---
+title: 'Cisco ASA ASDM VoIP Quick Start Guide'
+date: '2021-01-07'
+tags: ['Networking', 'Cisco']
+draft: false
+---
+# Introduction
+
+Earlier this week I had to quickly configure a Cisco ASA firewall for a new VoIP system that was getting installed. I have done this in the past but it's not something I do frequently enough to just roll through the config. I had notes from the vendor and checked a couple other resources and decided I'd put together this easy to understand generic formula for how to accomplish this relatively common scenario.    
+
+In this scenario, the VoIP system has remote users that need to be able to access the phone system from Internet or VPN. 
+
+Alright, so here it is-
+
+1.)    Log into the Cisco ASDM interface.
+
+2.)    First, we need to configure a Public IP to NAT to the internal IP of the VoIP system. Click on “Configuration” at the top, then click on “Firewall” down on the bottom menu. Once in the firewall section, highlight “NAT Rules”.
+
+3.)    Click on the “Add” option on the right side to add a new static NAT rule and choose “add new static NAT rule”.
+
+4.)    Original Interface is “inside” with a source that is the internal IP of the VoIP System. The translated Interface is the outside interface. Select the “Use IP Address” option and specify an available static public IP from your ISP that you have not used in a NAT policy. Then click “OK.” Essentially, this tells the ASA to statically (always) translate traffic from inside interface from the inside IP of the VoIP system destined for the outside Interface to translate to the static public IP you specified. In turn, the ASA will automatically translate inbound traffic from the outside static public IP specified from the outside interface to the inside interface destined for the internal IP specified.
+
+5.)    Now, with the NAT rule in place, click the “Apply”.
+
+6.)     Add port forwarding rules for VoIP traffic. Click on “Configuration” at the top again and then click on “Firewall” down on the bottom menu again. Highlight “Access Rules” option.
+
+7.)    Click on the “Add” option on the right side to add a new access rule and choose “add new access rule”.
+
+8.)    Choose Interface “Outside” because this is going to be a rule that applies to source traffice from the outside going to the inside of the network. Action is to permit. Source is anything out on the Internet (alternatively, you can create a network object or group with specific IP addresses or ranges). Destination is going to be the public NAT'd IP address for the phone system. Service is tcp-udp/sip (sometimes you may have to create separate rules – one for UDP specific and one for TCP specific SIP. SIP port is 5060 by default).
+
+9.)    Repeat step 4 for creating any port forwarding rules you need to have in place based on open ports the VoIP provider specifies. Once done, external remote users should be able to configure their VoIP phones to point to the public IP of your phone system and connect to that phone system to make calls.
+
+10.)  Save the running config of the ASA.
+
+11.) You may notice VoIP traffic isn’t fully working, or sometimes, a phone provider may tell you to “disable SIP / ALG options” in the firewall. How do you do that? By default the ASA is set to inspect SIP packets via its global policy map. The ASA will inspect SIP packets and deal with them how they want to before NAT'ing the packets to the right destination. This can cause loss of audio, call quality issues, etc. sometimes if a VoIP system is not meant to have SIP inspection turned on in the firewall. To disable SIP inspection in the ASA, you need to navigate back to “Configuration” then “Firewall” then highlight “Policy Rules.”
+
+12.) Once in “Policy Rules” you highlight the default inspection policy by left clicking on it and then choose the “Edit” button at the top. This will open a new window. At the top, click on the “Rule Actions” tab. Scroll down until you see “SIP” option and then UNCHECK the option and hit “OK” then click the “Apply” button. This essentially sends the following command to the ASA:
+
+```
+policy-map global_policy
+class inspection_default
+no inspect sip
+``` 
+
+
+13.)  That’s it! Remote VoIP users on the Internet should be able to configure their VoIP phones to point to the public IP of your phone system and connect to that phone system to make calls.
+
+But what about VPN users using softphones or locations already connected with site-to-site tunnels?  Keeping in mind the settings above regarding what the VoIP system provider may tell you in order to configure your firewall, VPN site-to-site traffic is also governed by an Access List, much like the Firewall Rules. Very similar to steps 7, 8, and 9, you add ACE rules to an existing VPN ACL under the “Site-to-site VPN” option along the bottom of the Configuration page. You drill into “Advanced” and then highlight “ACL Manager.” Select the appropriate Access List (depends on if this is the firewall where the VoIP system is vs. the remote firewall, as both firewalls will need to have these rules added.
+
+Quick side note- Most deployments internally will need DHCP configured on the Voice VLAN. Be sure to create a scope and assign the correct scope options. The voice vendor will be able to confirm. 
+
+I hope this puts all the pieces together for you and helps get the firewall configuration complete for your phone vendor or team.

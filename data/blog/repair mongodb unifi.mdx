@@ -1,0 +1,21 @@
+---
+title: 'How to repair Mongodb in Debian Linux on Unifi controller'
+date: '2019-05-05'
+tags: ['Ubiquiti', 'Networking']
+draft: false
+---
+Encountered a Unifi controller that would not load the web interface. I discovered that the drive was full and had to be expanded.  
+  
+In order to expand a volume in AWS I had to go through the standard process of - Creating a snapshot, create a volume from a snapshot, shut the instance down, detach, attach (New volume), and boot the instance back up again.   
+  
+The instance booted back up and checking df -h everything looked good! The only issue is while looking at the logs I found the following error- **DbServer not shutdown cleanly and need repairing on next startup.** Performing a clean reboot did not resolve the issue.  
+  
+I was able to find the correct process of repairing the database for Debian Linux.  
+  
+``` 
+service unifi stop  
+  
+mongod --dbpath /usr/lib/unifi/data/db --smallfiles --logpath /usr/lib/unifi/logs/server.log --repair  
+  
+service unifi start  
+```

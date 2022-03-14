@@ -1,0 +1,36 @@
+---
+title: 'Password Policy for Azure AD'
+date: '2020-10-02'
+tags: ['Cloud', 'Azure', 'Microsoft']
+draft: false
+---
+This year has been all about cloud native environments. My background as a traditional IT Administrator had me work primarily with on premises infrastructure which sometimes was extended to the cloud or made use of some cloud services. For example, configuring hybrid Exchange and using Azure AD connect to sync local AD passwords to Azure AD.
+
+### Cloud native shift
+
+With the landscape of today things have shifted where I'm working more with customers in cloud native environments. This brings up some interesting new dynamics in regards to how users are managed and password policies. 
+
+### Azure AD password policy
+
+A customer of mine recently had a third party security audit performed. One item that always comes up with these audits is documenting a password policy. Normally with on premises environment this is configured and deployed through Group Policy. You have complete control over every aspect of the policy and its settings. 
+
+With Azure AD Microsoft has a built in policy which you cannot edit. Users are subject to the hard-coded password policy built into the system. Per Microsoft documentation, the requirements are below:
+
+| Property                     | Requirements                                                                                                                                                                                                                                       |
+|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Characters allowed           | • A – Z • a - z • 0 – 9 • @ # $ % ^ & * - _ ! + = [ ] { } \ \ : ‘ , . ? / ` ~ " ( ) ;                                                                                                                                                             |
+| Characters not allowed       | • Unicode characters • Spaces • Cannot contain a dot character "." immediately preceding the "@" symbol”                                                                                                                                           |
+| Password restrictions        | • A minimum of 8 characters and a maximum of 256 characters. *this is a recent change; the former maximum was 16 characters • Requires three out of four of the following: - Lowercase characters - Uppercase characters - Numbers (0-9) - Symbols |
+| Password expiry duration     | Default value: 90 days. Global setting affecting all users in the organization.                                                                                                                                                                    |
+| Password expiry notification | Default value: 14 days (before password expires). Global setting affecting all users in the organization.                                                                                                                                          |
+| Password expiry              | Azure AD Supports disabling password expiry on a per-user bases or for the entire organization.                                                                                                                                                    |
+| Password change history      | The last password can't be used again when the user changes a password.                                                                                                                                                                            |
+| Password reset history     | The last password can be used again when the user resets a forgotten password.                                                                        |
+
+Microsoft also has a feature- Azure AD Password Protection, which adds dictionary capabilities to passwords for customers with an Azure AD Premium subscription. There are two layers to the Microsoft solution:
+
+**Global Banned Password List** – a Microsoft-provided list of “commonly used and compromised passwords.” Microsoft does not disclose any details about the contents of this list – there is, by design, no information on what sources Microsoft has used to compile the list, nor any details about its size.
+
+**Custom banned Password List **– available with an Azure AD Premium P1 or P2 subscription, customers can block a custom list of words from appearing in user passwords.
+
+*Please note this post was created using Markdown. The pipe character  |  is also a character that is included in the "Characters allowed". I could not include it above as the table uses the pipe character.*

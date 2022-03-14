@@ -1,0 +1,38 @@
+---
+title: 'I created a Pomodoro timer in Python'
+date: '2020-04-07'
+tags: ['Python']
+draft: false
+---
+I use the **Pomodoro Technique** while working and studying for certifications. I've found it to be a useful time management tool. I use it to assist with focus and eliminate distractions. If you're not familiar with the technique, it uses a timer to break down work intervals into chunks (Typically 25 minutes) followed by a short break.  
+  
+I have no background in programming. I've been looking at Python courses for some time and recently decided to jump in. I like to learn by doing hands on labs, etc. Yesterday I was brainstorming on some ideas for a small project to undertake. Then I thought- Why not create my own Pomodoro timer?  
+  
+This is still a work in progress but I think it's 80% complete. I'm trying to figure out what I want to do once the timer is up. Ideally I'd like to have it show another button- "Take a 5 minute break" or "Run again". I'm going to be testing this out over the next few days and weeks.  
+ 
+The code-  
+
+```  
+import PySimpleGUI as sg  
+  
+sg.theme('Darkteal 6')  
+  
+layout = \[  \[sg.Text('Pomodoro Timer', size=(20, 2), justification='center')\],  
+            \[sg.Text(size=(10, 2), font=('Helvetica', 20), justification='center', key='-OUTPUT-')\],  
+            \[sg.T(' ' \* 5), sg.Button('Start/Stop', focus=True), sg.Quit()\]\]  
+  
+window = sg.Window('Pomodoro', layout, alpha\_channel=.9)  
+  
+timer\_running, counter = True, 150000  
+  
+while True:                                  
+    event, values = window.read(timeout=10)  
+    if event in (None, 'Quit'):              
+        break  
+    elif event == 'Start/Stop':  
+        timer\_running = not timer\_running  
+    if timer\_running:  
+        window\['-OUTPUT-'\].update('{:02d}:{:02d}'.format((counter // 100) // 60, (counter // 100) % 60, counter % 100))  
+        counter -= 1  
+window.close()  
+```

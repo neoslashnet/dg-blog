@@ -1,0 +1,17 @@
+---
+title: 'AWS RDS Error- VPC DNS Resolution'
+date: '2020-05-08'
+tags: ['AWS', 'Cloud']
+draft: false
+summary:
+---
+Today I worked on spinning up a new SQL server RDS instance and received an error while launching the instance.   
+
+**_Error: The specified VPC does not support DNS resolution, DNS hostnames, or both._**
+
+Turns out the VPC I created did not have DNS Resolution or Hostnames enabled.
+
+_To correct this you need to log into the [AWS VPC Management Console](https://console.aws.amazon.com/vpc/  )  
+  
+**Right click** on the **VPC and Edit the two DNS options- set to Yes**.
+

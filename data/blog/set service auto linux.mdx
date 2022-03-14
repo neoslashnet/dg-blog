@@ -1,0 +1,23 @@
+---
+title: 'Configure a service to automatically start at boot Ubuntu server'
+date: '2020-03-19'
+tags: ['Linux' ]
+draft: false
+summary:
+---
+Recently I set up a freeradius server to work with DUO MFA for a remote access VPN. Everything worked but I had to reboot the server and I noticed the freeradius server service was not running after the reboot.  
+  
+Please note you can replace the freeradius service with the name of the service in which you are working with.  
+  
+To enable the service to automatically start I ran the following command-  
+
+```
+systemctl enable freeradius.service
+```
+  
+  
+To disable a service from automatically starting you can run the following command  
+
+```
+systemctl unmask freeradius.service
+```

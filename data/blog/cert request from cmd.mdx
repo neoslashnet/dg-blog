@@ -1,0 +1,26 @@
+---
+title: 'How to request an SSL cert from local CA via cmd line'
+date: '2019-05-07'
+tags: ['Microsoft']
+draft: false
+---
+Yesterday I was tasked with installing new SSL certs on several Linux machines. This environment has a local CA in place on the domain.  
+  
+I generated a CSR  on the server via OpenSSH and copied them to my Windows CA.  
+  
+In order to generate the certificate you will need to know which template to use. To view all the templates on the server, run the following command- 
+
+
+```
+certutil -catemplates
+``` 
+  
+In my case, I went with the the **"Web Server" template** To generate the certificate run the following command- 
+
+
+```
+certreq -attrib "CertificateTemplate:WebServer"
+``` 
+
+After you run this command you can browse to the CSR and then export a SSL certificate.
+

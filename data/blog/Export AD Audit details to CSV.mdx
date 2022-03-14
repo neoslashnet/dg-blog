@@ -1,0 +1,26 @@
+---
+title: 'Export AD Audit details to CSV'
+date: '2019-06-19'
+tags: ['Microsoft']
+draft: false
+---
+Very useful script I wrote to generate a .csv that shows valuable information from Active Directory.  
+
+```  
+$OutputPath = "c:\\support\\users.csv"  
+  
+$Year = "2019"  
+  
+$filename = "$($Year)\_users.csv"  
+  
+$YearUsers = Get-ADUser -Filter  {(Enabled -eq "True")} -Properties created, lastlogondate,passwordlastset,passwordneverexpires  
+  
+$YearUsers | select name, samaccountname, created,lastlogondate,passwordlastset,passwordneverexpires |  
+
+Export-Csv -Path $OutputPath$filename -NoTypeInformation -Force
+
+```
+
+  
+
+

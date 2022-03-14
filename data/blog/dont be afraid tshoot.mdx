@@ -1,0 +1,44 @@
+---
+title: 'Never be afraid to troubleshoot'
+date: '2020-04-16'
+tags: ['Career Advice']
+draft: false
+---
+First and foremost this is **NOT a rant.**  
+  
+As a consultant many of my customers use third party software. Just about every business does. This is nothing new. I recently went through an upgrade and I want to share some details to show why you shouldn't just throw your hands up. Don't be afraid to troubleshoot issues!   
+  
+
+#### A little background
+
+One thing I learned early in my career in IT was to always troubleshoot and verify the basics before escalating or asking for help. Looking back, I was quite fortunate to work in an environment where the systems administrators wouldn't let me walk over and tell them- There's an outage right now and walk away. They always requested more details. If you didn't perform any troubleshooting they would ask direct questions like- What's changed? Can you ping the gateway? And the list goes on.  
+  
+Working in an environment like this instilled troubleshooting into my mindset. Throughout my career I've found that not everybody has this mentality. I can't tell you how many times I've been called in the middle of the night during a maintenance window from my NOC stating that mail is down, or this application is down after the server has been rebooted. I then ask- Are the services running? Again, this is not meant to be a rant. It's just an example to highlight the fact that not everyone performs basic troubleshooting on a given issue.  
+  
+
+#### My recent example
+
+Normally when working with third party vendors I begin a migration project by discussing the details and it follows the pattern below-  
+  
+
+*   I spin up a new Server/VM/EC2 instance.
+*   I provide VPN access to the third party vendor.
+*   I work with the vendor to install the software.
+*   Third party vendor performs some tweaks to the application + testing.
+*   I work with the vendor and client to schedule a cutover. 
+*   Vendor performs data migration after hours.
+*   My desktop team and I assist with onsite support to ease the transition,
+
+  
+After that, it's just a matter of testing and ensuring that the clients are all working.  
+  
+I recently had a project where I had to upgrade a Sage software product. I called their support and laid out the groundwork for the tasks listed above. They told me I had to do it all but they could send me a link from their KB about how to do it. Their support for the product was different and they did not perform any migration service, etc.  
+  
+I went through their KB articles and found the process straight forward. I installed the software on a new server and scheduled the cut over. This is where things got interesting. I initially ran into issues exporting the main system backup. I received an error- "Error 333-Cannot open file.csv"  
+  
+This is why I am writing this. I'm not an expert in Sage software, I don't really know what this error code is but...... let's troubleshoot it! Where is this file in question? Is it a permission issue? I went ahead and found the file in question, checked permissions, and found that everything looked good. I also thought maybe Office had to be installed on the system. I installed Microsoft Office and tried it again. Same error. From there, I went through the server again looking for anything that stood out. After digging around a little more I found the previous IT vendor was running Google drive sync to their account as a form of backup on the entire directory. I killed the Google sync and the backup worked!  
+  
+
+#### Final thoughts
+
+If you are in a senior role-Don't take the easy way. Don't find every excuse or angle as to why issue xzy is not your job. Not every issue is the third party vendor's responsibility. If you work in a help-desk or in an entry level position- Don't be afraid to troubleshoot issues. Gather as many details as you can so that you can ask for help or escalate the ticket in an efficient manner.  

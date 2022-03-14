@@ -1,0 +1,54 @@
+---
+title: 'Geo Blocking on FortiGate'
+date: '2021-02-05'
+tags: ['Networking', 'Fortinet', 'Firewall']
+draft: false
+---
+Throughout this week I've been working with a customer on an issue where we've been looking at Geo Blocking. I decided to perform a quick test on a FortiGate firewall and was surprised just how easy it was. I'm going to look at implementing this into my normal configs going forward. 
+
+### Create objects
+
+The first step is to create an address objects for the countries you want to block.
+
+**Go to Policy&Object -> addresses
+Then select 'create' and 'new address'**
+
+**Name: Choose a name
+Type: Select 'Geography'
+Country: Select the country to block**
+
+Again, do this for all the countries to block.
+
+![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1612564637331/QXVlUwSdF.png)
+
+Then, create a group for these countries that needs to be blocked.
+
+Select 'create' and 'new address group'
+
+![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1612564609933/OkcaygYL_.png)
+
+### Configure Policies
+
+The last thing to do is to create a policy.
+Go to Policy & Object -> IPv4 Policy
+
+Below is a sample of the policy. It is essentially inside to outside- Deny to the Geo-Block address group.
+
+![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1612565017002/8jtPegJuv.png)
+
+Do the same but in reverse for traffic where the source is outside destined for you network. 
+
+### Test the policies
+
+Enable the policies when ready and perform testing. This is a sample test I performed. As you can see it worked! 
+
+![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1612565686589/VyLt2hD0W.png)
+
+
+![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1612565703873/aEvo7Qo13.png)
+
+You can also check the policy to look at how much traffic has been sent.
+
+![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1612565752514/-zeohxErk.png)
+
+I hope this helps!

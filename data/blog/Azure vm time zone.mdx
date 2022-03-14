@@ -1,0 +1,30 @@
+---
+title: 'Change Time Zone of Azure Virtual Machines'
+date: '2021-02-01'
+tags: ['Cloud','Microsoft', 'Azure']
+draft: false
+---
+I noticed while working on a project that all my VM's in Azure were set to the UTC timezone. Time synchronization is critical in domain based environments and I like to avoid issues cropping up if I can help it. 
+
+I tried the “normal” process to change the timezone for a Windows server but found it  doesn’t work as expected. You can change the time zone by right-clicking on the clock and selecting “Adjust Date and Time”. If you change the time zone here, it doesn’t actually do anything (at least it didn’t when I did it).  It may also change for a short period of time and then revert back to UTC.
+
+PowerShell to the rescue!  This change will ensure the timezone change will stick, even if the VM is deallocated and reallocated.
+
+In order to see all options available run the following command:  We can see that by  
+
+```
+Get-TimeZone -ListAvailable
+``` 
+
+This lists every zone possible To filter your results, run the following command: 
+
+```
+Get-TimeZone -ListAvailable | where ({$_.Id -like "Pacific*"})
+``` 
+
+Now you can use the "Id" to set the timezone of your choice:
+
+
+```
+Set-TimeZone -Id "Pacific Standard Time"
+``` 

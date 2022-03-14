@@ -1,0 +1,22 @@
+---
+title: 'PowerShell Drive Map with Volume Label'
+date: '2020-03-27'
+tags: ['PowerShell','Microsoft']
+draft: false
+---
+I performed troubleshooting today and created the PowerShell script below to map two drives and label the volumes. By default the label was the share name of the folder. I needed to change it to something more user friendly.  
+  
+Here is the script-  
+
+```
+$Net = New-Object -ComObject WScript.Network   
+$Rename = New-Object -ComObject Shell.Application   
+  
+\#### # Map the network drives   
+$Net.MapNetworkDrive("Q:", '\\\\hostname\\shared\_data01')   
+$Net.MapNetworkDrive("R:", '\\\\hostname\\share\_data02')  
+  
+\#### # Rename everything   
+$rename.NameSpace("Q:\\").Self.Name = 'Network -> Share Data01'   
+$rename.NameSpace("R:\\").Self.Name = 'Network -> Share Data02'
+```

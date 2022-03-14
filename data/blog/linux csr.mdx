@@ -1,0 +1,19 @@
+---
+title: 'How to generate a CSR for an SSL certificate in Linux-NGINX'
+date: '2019-03-29'
+tags: ['Linux' ]
+draft: false
+summary:
+---
+
+Today I had to install a new SSL certiciate on a Linux web server running NGINX. Below are the steps needed-  
+  
+**(As root) cd /etc/ssl/private**
+
+```
+openssl genrsa -out myprivatekey.key 2048  
+  
+openssl req -new -key myprivatekey.key -out CSR.txt
+```  
+  
+From there you can copy the txt file to another directory and use Winscp to transfer it to your local device. The method I used is **cat CSR.txt** and I copied the CSR request details directly within the terminal.

@@ -1,0 +1,41 @@
+---
+title: 'Activate New Licenses on Older OpenVPN Access Server'
+date: '2021-03-19'
+tags: ['Networking']
+draft: false
+---
+So much of IT consulting is being able to handle being thrown into a non standard or problematic situation and come up with a solution for the short term and long term. Can you fix the pressing issue right now? Can you develop a plan for the future?  
+  
+Perfect example of this is something I ran into this week. A client of mine used to use OpenVPN for their primary remote access method. I have since installed a new Fortigate firewall and configured an SSL VPN for remote access. We decided to keep the OpenVPN in play as a "Backup".  
+  
+With it not being the primary VPN access method the software has not been upgraded. The software still works and there does not appear to be any major security flaws or vulnerabilities. There hasn't been a valid reason to perform an upgrade for quite some time. That changed this last week when my client renewed/purchased additional licenses.  
+  
+After attempting to activate the new licenses a couple of times I researched the errors and discovered that OpenVPN has made some changes on their side and you either have to update the access server software version or install a patch that will allow you to install the newer licenses.  
+  
+It just so happened that someone was actively using OpenVPN and was out of the office. In the limited communication we had with this user they mentioned the Fortinet client experienced an issue and they were using OpenVPN while at their conference. The individual was not available to discuss or troubleshoot the issue so we had to let them use OpenVPN while they were out of the office.  
+  
+This situation goes back to my first point of the post. The situation I had is I wanted to install the licenses and keep the user connected.  My short term plan was to install the patch and activate the licenses. After the one individual is back in the office, I can schedule a time to update the access server version.  
+  
+
+In order to install the patch you need to connect via ssh or console on the OpenVPN access server and run the following command-  
+
+```
+wget https://swupdate.openvpn.net/as/hotfix/openvpn-as-hotfix-2018-1.tar 
+&& tar xvf openvpn-as-hotfix-2018-1.tar
+&& cd openvpn-as-hotfix-2018-1 && ./install
+
+After you run the command you should the following-
+launch wrapper openvpnas modified
+launch wrapper liman modified
+apply temporary post_auth
+attempting warm restart
+warm restart succeeded
+no original post_auth
+live hotfix applied
+```
+
+This means the patch installed successfully and you can activate your license via command line-
+
+```
+/usr/local/openvpn\_as/scripts/./liman Activate "License key here"
+```

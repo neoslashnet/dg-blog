@@ -1,0 +1,28 @@
+---
+title: 'Resolve SSL VPN Disconnects- Fortinet'
+date: '2020-03-05'
+tags: ['Networking', 'Fortinet', 'Firewall']
+draft: false
+---
+I have performed a couple Fortinet SD-WAN implementations and have been thoroughly impressed with it. It's fairly straight forward to set up and is quite powerful.  
+  
+Most of my clients utilize the SSL VPN functionality built in and I noticed that the VPN would disconnect randomly about 3-5 minutes after connecting. I did some research on this and found there are two commands you need to run to resolve the issue.  
+  
+It's worth noting I am running at 6.0.1 and later. I believe these commands are different for older firmware versions. It's also possible this is resolved in 6.2.x releases but I haven't done much research on 6.2.  
+  
+Essentially when you have two or more interfaces connected to the internet (SD-WAN) your session might become corrupt and not route traffic properly or cause your session to disconnect. The commands below ensure that WAN1 (Primary WAN) is the default for SSL VPN and that your sessions will not disconnect.  
+  
+Fortinet commands-
+
+```
+config vpn ssl settings
+    set source-interface wan1
+end
+
+config system interface
+    edit wan1
+        set preserve-session-route enable
+    next
+end
+
+```

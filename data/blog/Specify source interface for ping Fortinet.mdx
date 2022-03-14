@@ -1,0 +1,54 @@
+---
+title: 'Specify source interface for ping- Fortinet'
+date: '2020-08-25'
+tags: ['Networking', 'Fortinet', 'Firewall']
+draft: false
+---
+Yesterday I was doing some troubleshooting and testing on an SD-WAN implementation and found that the ping command in Fortios is a little different than others. I did a packet capture and so no packets flowing on WAN2 and I wanted to check if the connection was up. So I went to the CLI!
+
+From the CLI Console execute the following command to check the current settings. 
+
+``` 
+execute ping-options view
+```
+
+This displays the current interface.  Per the example below, it has “Auto” as the Source Address.
+
+Ping Options:
+
+        Repeat Count: 5
+
+        Data Size: 56
+
+        Timeout: 2
+
+        Interval: 1
+
+        TTL: 64
+
+        TOS: 0
+
+        DF bit: unset
+
+        Source Address: auto
+
+        Pattern:
+
+        Pattern Size in Bytes: 0
+
+        Validate Reply: no
+
+In my scenario, I needed to send a ping out of the WAN2  interface, where  2.2.2.2 is the IP address. The command below sets the IP of WAN2 as the source. 
+
+```
+execute ping-options source 2.2.2.2
+``` 
+After that the final step is to ping your destination. 
+
+```
+exec ping 8.8.8.8
+``` 
+
+
+
+ 

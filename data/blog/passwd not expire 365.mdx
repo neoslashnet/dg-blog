@@ -1,0 +1,18 @@
+---
+title: 'Set a specific Office 365 account password to not expire'
+date: '2020-02-27'
+tags: ['Microsoft', 'Cloud']
+draft: false
+---
+Lately I've been doing a few Office 365 migrations. I've ran into a snag with a couple service accounts and making sure their passwords do not expire.  
+  
+Within the Office 365 portal you can make global changes but you cannot specify one account. In order to set one account's password to not expire you'll need to use PowerShell.  
+  
+Below are the commands you need to run-  
+
+```
+Connect-AzureAD 
+
+Set-AzureADUser -ObjectId <user id> -PasswordPolicies DisablePasswordExpiration
+```
+ A)

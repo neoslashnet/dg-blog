@@ -1,0 +1,19 @@
+---
+title: 'Configure NIC From CMD Line'
+date: '2019-03-07'
+tags: ['Microsoft']
+draft: false
+---
+Often times I work with network devices locally that require a static IP address. Once I am done I usually need to set my network adapter back to DHCP. I recently created a batch file to save me the hassle from going back to "Control Panel", etc.  
+  
+**netsh interface ip set address "Local Area Connection" dhcp  
+netsh interface ip set dns "Local Area Connection" dhcp**  
+  
+You can also use netsh to set a static IP address if you'd like.  
+
+```
+netsh interface ip set address "connection name" static 
+192.168.0.101 255.255.255.0 192.168.0.1  
+netsh interface ip add dns "connection name" 8.8.8.8
+
+```

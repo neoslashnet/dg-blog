@@ -1,0 +1,18 @@
+---
+title: 'Export pfx file from crt with key'
+date: '2019-05-19'
+tags: ['Linux' ]
+draft: false
+summary:
+---
+
+Today I installed a wildcard certificate on a Windows machine where I originally created the private key on a Linux machine. I downloaded the certificate file from GoDaddy and had the file in .crt format.  
+  
+In order to install it on a Windows web server I had to import it into IIS as a .pfx file. To do this you can use Openssl.The following command will produce a .pfx that can easily be imported into IIS.  
+
+```  
+openssl pkcs12 -export -out certname.pfx -inkey privatekey.key -in certname.crt
+
+```
+  
+You will be prompted to enter a passphrase during export and during import (Within Windows IIS).

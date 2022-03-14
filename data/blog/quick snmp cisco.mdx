@@ -1,0 +1,46 @@
+---
+title: 'How to rate limit a host with Cisco ASA'
+date: '2020-03-20'
+tags: ['Cisco', 'Networking']
+draft: false
+---
+Do you have a host on your network using up all the bandwidth? Maybe an offsite backup device keeps sending GB's of data offsite?  
+  
+In my case, I deployed an AWS Storage gateway in file gateway mode. This works perfect for my use case but there's a couple of "Gotcha's" with the AWS file gateway versus a volume or tape library.  
+  
+The main one being that you cannot schedule or rate limit the file gateway directly within the AWS Console. This is simply not built into the solution. In order to ensure the upload did not use all the bandwidth on the network, I used rate limiting on the Cisco ASA. Below is the configuration.  
+  
+First step is to create an ACL for the host (In this example the file gateway is 1.1.1.1). I am allowing all IP traffic to and from this host.
+
+```
+access-list AWS-FileGW-Throttle extended permit ip host 1.1.1.1 any
+access-list AWS-FileGW-Throttle extended permit ip any host 1.1.1.1
+```
+  
+  
+Next you need to create a class map to match the ACL that was just created.  
+
+```
+class-map CM-AWSTHROTTLE
+match access-list AWS-FileGW-THROTTLE
+exit
+```
+
+  
+  
+After that you need to configure a policy map which the ASA will use to police the traffic. In this example I am rate limiting the host to 10 mpbs with a burst rate of 1 mbps.
+
+```
+policy-map PM-AWSTHROTTLE
+class-CM-AWSTHROTTLE
+police output 10000000 1000000
+police input 10000000 1000000
+exit
+```
+Once these steps are complete you need to tie a service policy to the inside interface.  
+
+```
+service-policy PM-AWS-THROTTLE interface inside
+```
+  
+That's it! Now go and check your network monitoring software/netflow and you'll see it is working!

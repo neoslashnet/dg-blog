@@ -1,0 +1,19 @@
+---
+title: 'How to connect to Exchange Online in PowerShell'
+date: '2019-08-09'
+tags: ['Microsoft', 'Cloud']
+draft: false
+---
+Quick blog post about the commands needed to connect to Exchange Online via Powershell.  
+
+```  
+$UserCredential = Get-Credential  
+  
+$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential -Authentication Basic -AllowRedirection  
+  
+Import-PSSession $Session -DisableNameChecking  
+  
+
+Remove-PSSession $Session
+```
+

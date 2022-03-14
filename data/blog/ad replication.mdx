@@ -1,0 +1,21 @@
+---
+title: 'Active Directory Audit'
+date: '2019-02-19'
+tags: ['PowerShell','Microsoft']
+draft: false
+---
+
+```
+$DomainControllers \= Get-ADDomainController \-Filter \*
+
+ForEach ($DC in $DomainControllers.Name) {
+
+Write-Host "Processing for "$DC \-ForegroundColor Green
+
+If ($Mode \-eq "ExtraSuper") {
+
+REPADMIN /kcc $DC
+
+REPADMIN /syncall /A /e /q $DC
+
+}

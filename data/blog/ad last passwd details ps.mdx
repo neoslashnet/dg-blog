@@ -1,0 +1,11 @@
+---
+title: 'PowerShell- AD User Details- Password last reset and Password never expires'
+date: '2019-03-28'
+tags: ['PowerShell','Microsoft']
+draft: false
+---
+Quick post- Super handy PowerShell command to get user details such as- Last time password was reset, and if their password is set to never expire.  
+
+```  
+get-aduser -filter \* -properties passwordlastset, passwordneverexpires |ft Name, passwordlastset, Passwordneverexpires
+```

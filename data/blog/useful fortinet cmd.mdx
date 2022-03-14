@@ -1,0 +1,55 @@
+---
+title: 'Useful Fortinet HA Commands'
+date: '2020-03-19'
+tags: ['Networking', 'Fortinet', 'Firewall']
+draft: false
+---
+Over the past couple months I've had to configure HA (High Availability) on several Fortigate firewalls. During the set up process and troubleshooting I've found the commands below to be most useful.  
+  
+
+```
+get system ha 
+``` 
+
+  
+This command gives you all the details on your overall configuration. It shows the group id, mode, heartbeat interfaces, monitor interfaces, and other details such as whether encryption is enabled.  
+  
+
+```
+get system ha status 
+``` 
+ 
+
+
+The next command gives you insight in the overall health of your HA configuration and tells you if the devices are in sync. If everything is working, you will see-  
+  
+
+```
+HA Health Status: OK  
+Configuration status:  
+  Masterserialnumber (Updated 1 seconds ago) in-sync  
+  Slaveserialnumber (Updated 1 seconds ago) in-sync  
+``` 
+  
+Another key thing to look for with this command is the **"Master"** selection process is displayed. The output of the command will show you which device is the "Master" and how it was selected. Side note- If you want one unit to always be the "Master" you can use the following commands (In addition to priority) 
+
+```
+config system ha 
+set override enable 
+end
+``` 
+
+The  bit of information on this command is that it will list the operating cluster index of the device. Typically this 0 for the "Master" unit and 1 for the "Slave". This comes in very useful for the next two commands.  
+  
+If your devices are "Out of sync" you have a couple options from the command line. First, you can use
+ 
+```
+execute ha manage 1
+``` 
+
+to manage your "Slave device". This is assuming your "Slave" device is out of sync for whatever reason. Once you execute this command you will see a login prompt. Log into the device and to force a sync use
+
+```
+execute ha synchronize start
+``` 
+After you perform a manual sync, you can use the previous commands to verify everything is working.

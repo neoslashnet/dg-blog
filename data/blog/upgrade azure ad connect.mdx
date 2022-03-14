@@ -1,0 +1,18 @@
+---
+title: 'Upgrade Azure AD Connect'
+date: '2020-07-08'
+tags: ['Microsoft', 'Cloud']
+draft: false
+---
+Today I went to upgrade the Azure AD Connect for a small client. This environment is quite small and the Azure AD Connect is installed on a domain controller.  
+  
+I went through the motions but received an error- "Group with name ADSyncAdmins was not found in the machine context". This is a domain controller so there are no local users and groups. I reviewed the Event Logs and found there were several groups which had the same error.  
+  
+After some contemplating, I decided to create the groups in Active Directory (Domain security groups). The following groups were created-  
+
+*   ADSyncAdmins
+*   ADSyncBrowse
+*   ADSyncOperators
+*   ADSyncPasswrodSet
+
+ I did not populate the groups and re-ran the wizard which completed successfully.

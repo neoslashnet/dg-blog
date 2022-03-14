@@ -1,0 +1,35 @@
+---
+title: 'How to add a smart host in Office 365 Exchange online'
+date: '2019-06-14'
+tags: ['Microsoft', 'Cloud']
+draft: false
+---
+In order for outbound email from Microsoft Office 365 to be routed through a smart host, we need to create a new send connector in Office365 and point it to your smart host.  
+**Create a new send connector in Office 365**  
+
+1.  Log in to the ****Office 365 Exchange Admin Center (EAC)****
+2.  Select the ****Admin > Exchange****menu
+3.  Select the ****Mail Flow > Connectors**** menu. Then, select ****Create a new Connector****
+4.  Set the mail flow scenario
+    *   Select ****Office 365**** from the **From: **drop-down
+    *   Select ****Partner Organization**** from the **To: **drop-down
+5.  Select ****Next****
+6.  Enter a ****name**** and ****description**** for the connector. You may also select the checkbox to make the connector active immediately
+7.  Select ****Next****
+8.  Select the ****Only when email messages are sent to these domains**** option
+    1.  Select the **plus** (****+****) to add domains that should use this connector
+    2.  Enter a value of **\*** (asterisk).This is a _wildcard_ that will route all outbound emails through your smart host
+9.  Select ****Next****
+10.  Select the ****Route email through these smart hosts**** option 
+    1.  Select the **plus** (****+****) to add your smart host:**_domain-com._outbound1-na.mailanyone.net**
+    2.  Click the ****Save**** button
+11.  Select ****Next****
+12.  Select the checkbox for ****Always use Transport Layer Security (TLS) to Secure the Connection (recommended)****
+13.  Select **Issued by a trusted certificate authority (CA)** from the list
+14.  Select ****Next****
+15.  Add an email address of a recipient for a domain ****external**** to your organization, and select **Validate** to test
+
+****Note:**** If you did not choose to turn the connector on in Step 6, validation of the connector will fail. If your validation results show that the connection was successful, but the email failed to send because "The domain of the recipient is not configured as part of connector" - this may be due to the connector being disabled. Try enabling the connector and re-attempting the validation. 
+
+16.  Once Office365 has been successfully validated, select ****Save****
+17.  Update your SPF record accordingly

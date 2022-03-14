@@ -52,7 +52,7 @@ const TypedBios = () => {
         <li>
           I love music <Twemoji emoji="guitar" />
         </li>
-        <li>I love rock pizza <Twemoji emoji="pizza" /> </li>
+        <li>I love rock pizza </li>
         <li>
           I love playing video games <Twemoji emoji="video-game" />, with my kids.
         </li>

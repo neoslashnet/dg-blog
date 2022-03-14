@@ -1,0 +1,15 @@
+---
+title: 'Add a machine to Microsoft Windows Domain with PowerShell'
+date: '2019-06-03'
+tags: ['PowerShell','Microsoft']
+draft: false
+---
+I've been really trying to learn more PowerShell and use it more frequently.  I recently decided to script adding a server to a domain via PowerShell.  
+  
+Here is the command-  
+
+```  
+add-computer –domainname ad.contoso.com -Credential AD\\adminuser -restart –force  
+```
+  
+Once entered you will be prompted to enter admin credentials.

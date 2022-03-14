@@ -1,0 +1,22 @@
+---
+title: 'Enable RDP From CMD Line'
+date: '2021-04-18'
+tags: ['Microsoft']
+draft: false
+---
+
+I ran into a sitaution this morning where I needed to quickly enable RDP on a remote machine. Sysinternals to the rescue! 
+
+  
+
+```
+psexec -u domain\administrator -p "P@ssw0rd" \\remotecomputername.domain.com reg add "hklm\system\currentcontrolset\control\terminal server" /f /v fDenyTSConnections /t REG_DWORD /d 0
+
+```
+
+
+
+```
+psexec -u domain\administrator -p "P@ssw0rd" \\remotecomputername.domain.com netsh firewall set service remoteadmin enable
+
+```

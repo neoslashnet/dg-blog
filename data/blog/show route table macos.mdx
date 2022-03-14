@@ -1,0 +1,25 @@
+---
+title: 'Show Routing Table on macOS'
+date: '2021-03-18'
+tags: ['AWS', 'macOS']
+draft: false
+summary: Show routing table on macOS
+---
+I set up and configured an AWS Client VPN Endpoint that is routing through a VPC with a transit gateway. There are several routes that run through the transit gateway and a VPN attachment as well. 
+
+Initially I did testing in the VPC where the transit gateway lives and began to test access to other VPC's. I noticed that I couldn't access the other subnets. I began troubleshooting and wanted to show the routes on my mac. To do so, you need to run the following command:
+
+
+```
+netstat -rn
+``` 
+The -r flag means to show routes.
+
+The -n flag means to not resolve IPs to hostnames.
+
+Here is an example of the command output-
+
+
+![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1615830588919/1IHBOcAD9.png)
+
+I was able to verify the routes were being populated and complete the configuration on AWS side to complete my project. 

@@ -1,0 +1,22 @@
+---
+title: 'Bypass spam checks in Office 365'
+date: '2020-08-21'
+tags: ['Microsoft', 'Cloud']
+draft: false
+---
+My experience with the default Microsoft Office 365 spam filter has been mixed. Most of my clients use third party spam filters such as Mimecast or Proofpoint.  
+  
+With a third party spam filter in production you do not need to have Office 365 scan messages for spam. This can create issues with email inadvertently ending up in someone's "Junk" folder. To avoid headache and confusion you can bypass these checks with a "Connection Filter".  
+  
+To do this-  
+  
+**Log into the Office 365 Exchange Admin Center**  
+Click on the **Protection** menu item
+Click on the **Connection Filter** menu item  
+Click on the **Edit icon** (The Default policy).  
+  
+This opens a new window.  
+Select **Connection Filtering** menu item on the left.  
+  
+
+Once you are there, you can add the IP addresses ranges (Click on +) based on what your vendor provider. For example, Mimecast provided the following link for this- [https://community.mimecast.com/docs/DOC-2154#jive\_content\_id\_USA](https://community.mimecast.com/docs/DOC-2154#jive_content_id_USA)
