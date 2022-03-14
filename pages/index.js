@@ -42,13 +42,13 @@ export default function Home({ posts }) {
               </h1>
               <TypedBios />
               <p className="mt-4 mb-8">
-                I started my coding journey in late 2016 with C/C++/Java in college
+                I started my career in 2006
                 <br />
-                I had my first job as a Python coding mentor in 2017
+                I had my first job as a PC Technician
                 <br />
-                I'm in love with the JS ecosystem, Web dev, and eCommerce
+                I went on and earned my stripes in consulting
                 <br />
-                I'm writing this blog to note down and share what I've learned as a SE
+                I'm writing this blog to note and share what I learn along the way
               </p>
               <div className="flex flex-col">
                 <Link href="/blog" className="hover:underline">
