@@ -37,7 +37,7 @@ const TypedBios = () => {
         <li>I work mostly with React/Node and pure JS.</li>
         <li>I'm Tu Le's husband.</li>
         <li>
-          I'm a a wannabe farmer <Twemoji emoji="rooster" />
+          I'm a a wannabe farmer ​👨‍🌾​🐓​👩‍🌾​ <Twemoji emoji="rooster" />
         </li>
         <li>
           I'm a sports-guy. I love
@@ -50,7 +50,7 @@ const TypedBios = () => {
         <li>
           I love music <Twemoji emoji="guitar" />
         </li>
-        <li>I love rock pizza </li>
+        <li>I love pizza </li>
         <li>
           I love playing video games <Twemoji emoji="video-game" />, with my kids.
         </li>
@@ -61,3 +61,4 @@ const TypedBios = () => {
 }
 
 export default TypedBios
+​​
