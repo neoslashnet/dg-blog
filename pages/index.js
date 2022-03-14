@@ -33,7 +33,7 @@ export default function Home({ posts }) {
 
             <div className="text-lg leading-8 text-gray-600 dark:text-gray-400">
               <h1 className="text-neutral-900 dark:text-neutral-200">
-                I'm <span className="font-medium">David Galiata</span> - an open-minded{' '}
+                I'm <span className="font-medium">David Galiata</span> - a Sysadmin turned{' '}
                 <span className="font-medium">Security Architect</span> in{' '}
                 <span className="font-medium hidden">The SF Bay Area</span>
                 <span className="align-middle flag-united-states">
