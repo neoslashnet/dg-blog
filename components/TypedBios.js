@@ -30,7 +30,7 @@ const TypedBios = () => {
           I was born in beautiful <b className="font-medium">Sonoma</b> County.
         </li>
         <li>
-          My first programming language I learned was <b className="font-medium">Pascal</b>.
+        I fell in love with technology <b className="font-medium">when I was 8 years old</b>.
         </li>
         <li>I love web development.</li>
         <li>I'm focusing on building eCommerce softwares.</li>
