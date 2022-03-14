@@ -24,7 +24,7 @@ const TypedBios = () => {
       <ul id="bios" className="hidden">
         <li>I'm a father, engineer, and learner.</li>
         <li>
-          I live in <b className="font-medium">The SF Bay Area</b>.
+          I live in <b className="font-medium">the SF Bay Area</b>.
         </li>
         <li>
           I was born in beautiful <b className="font-medium">Sonoma</b> County.
@@ -35,9 +35,9 @@ const TypedBios = () => {
         <li>I love IT.</li>
         <li>I'm currently focused on cloud security.</li>
         <li>I work for a cybersecurity startup.</li>
-        <li>I'm dedicated to life-long learning.</li>
+        <li>I'm dedicated to lifelong learning.</li>
         <li>
-          I'm a wannabe farmer <Twemoji emoji="rooster" />
+          I'm a wannabe farmer <Twemoji emoji="dog" />
         </li>
         <li>
           I'm a sports-guy. I love
