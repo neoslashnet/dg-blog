@@ -33,11 +33,11 @@ export default function Home({ posts }) {
 
             <div className="text-lg leading-8 text-gray-600 dark:text-gray-400">
               <h1 className="text-neutral-900 dark:text-neutral-200">
-                I'm <span className="font-medium">Tuan Anh Huynh</span> - an open-minded{' '}
-                <span className="font-medium">Software Engineer</span> in{' '}
-                <span className="font-medium hidden">Ha Noi, VN</span>
-                <span className="align-middle flag-vn">
-                  <Twemoji emoji="flag-vietnam" />
+                I'm <span className="font-medium">David Galiata</span> - an open-minded{' '}
+                <span className="font-medium">Security Architect</span> in{' '}
+                <span className="font-medium hidden">The SF Bay Area</span>
+                <span className="align-middle flag-united-states">
+                  <Twemoji emoji="flag-united-states" />
                 </span>
               </h1>
               <TypedBios />
