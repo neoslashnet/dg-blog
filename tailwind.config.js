@@ -57,7 +57,7 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
-        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        sans: ['JetBrains Mono', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         primary: colors.indigo,
