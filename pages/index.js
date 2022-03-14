@@ -42,7 +42,7 @@ export default function Home({ posts }) {
               </h1>
               <TypedBios />
               <p className="mt-4 mb-8">
-              I write about IT, Cloud, and Security.
+                I started my coding journey in late 2016 with C/C++/Java in college
                 <br />
                 I had my first job as a Python coding mentor in 2017
                 <br />
