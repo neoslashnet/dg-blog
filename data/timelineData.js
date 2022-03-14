@@ -9,49 +9,14 @@ const timelineData = [
     time: 'Jun 2021 - Dec 2021',
     role: 'Senior Enterprise Network and Systems Consultant',
     company: 'Cobaltix',
-    companyURL: 'https://cobaltix.com/',
-    works: [
-      <>
-        Built{' '}
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://themeforest.net/item/minimog-the-high-converting-shopify-theme/33380968"
-        >
-          Minimog
-        </a>{' '}
-        - The Next Generation Shopify Theme (Weekly Bestseller and Top Trending in eCommerce
-        category)
-      </>,
-      <>
-        Built{' '}
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://apps.shopify.com/foxecom-boost-sales"
-        >
-          Fox Kit Shopify App
-        </a>{' '}
-        - The upsells and boost conversion tools that is built to support Minimog theme
-      </>,
-    ],
+    companyURL: 'https://cobaltix.com/',   
   },
   {
-    time: 'May 2020 - Apr 2020',
-    role: 'Frontend Engineer',
-    company: 'Coc Coc',
-    companyURL: 'https://coccoc.com/',
+    time: 'Nov 2017 - Dec 2021',
+    role: 'Senior IT Systems Engineer',
+    company: 'Nims and Associates',
+    companyURL: 'https://nimsassociates.com/',
     companyBio: '#1 web browser in Viet Nam with more than 25M users',
-    works: [
-      <>
-        Built{' '}
-        <a target="_blank" rel="noopener noreferrer" href="https://coccoc.com/webhp">
-          Coc Coc's newsfeed
-        </a>{' '}
-        (with Team Leader)
-      </>,
-      `Maintain and optimize Newtab's widget and performance`,
-    ],
   },
   {
     time: 'Aug 2018 - Apr 2020',
