@@ -44,7 +44,7 @@ export default function Home({ posts }) {
               <p className="mt-4 mb-8">
                 I started my career in 2006
                 <br />
-                I hold industry wide certifications from AWS, Microsoft, VMWare, CompTIA, and Cloud Security Alliance
+                I hold industry wide certifications from AWS, Microsoft, CompTIA, and VMWare
                 <br />
                 I earned my stripes in corporate IT and consulting
                 <br />
