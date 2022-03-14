@@ -22,7 +22,7 @@ const TypedBios = () => {
   return (
     <div>
       <ul id="bios" className="hidden">
-        <li>I'm a father, builder, and learner.</li>
+        <li>I'm a father, engineer, and learner.</li>
         <li>
           I live in <b className="font-medium">The SF Bay Area</b>.
         </li>
@@ -32,18 +32,18 @@ const TypedBios = () => {
         <li>
           I fell in love with technology <b className="font-medium">when I was 8 years old</b>.
         </li>
-        <li>I love web development.</li>
-        <li>I'm focusing on building eCommerce softwares.</li>
-        <li>I work mostly with React/Node and pure JS.</li>
-        <li>I'm Tu Le's husband.</li>
+        <li>I love IT.</li>
+        <li>I'm currently focused on cloud security.</li>
+        <li>I work for a cybersecurity startup</li>
+        <li>I'm dedicated to life-long learning</li>
         <li>
-          I'm a a wannabe farmer ​👨‍🌾​🐓​👩‍🌾​ <Twemoji emoji="rooster" />
+          I'm a wannabe farmer <Twemoji emoji="rooster" />
         </li>
         <li>
           I'm a sports-guy. I love
           <span className="ml-1">
             <Twemoji emoji="soccer-ball" />,
-            <Twemoji emoji="man-running" />,
+            <Twemoji emoji="american-football" />,
           </span>
         </li>
         <li>I love spending time with my family.</li>
