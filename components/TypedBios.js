@@ -32,12 +32,12 @@ const TypedBios = () => {
         <li>
           I fell in love with technology <b className="font-medium">when I was 8 years old</b>.
         </li>
-        <li>I love IT.</li>
+        <li>I love .</li>
         <li>I'm currently focused on cloud security.</li>
         <li>I work for a cybersecurity startup.</li>
         <li>I'm dedicated to lifelong learning.</li>
         <li>
-          I'm a wannabe farmer <Twemoji emoji="dog" />
+          I'm a wannabe farmer <Twemoji emoji="goat" />
         </li>
         <li>
           I'm a sports-guy. I love
