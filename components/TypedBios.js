@@ -37,15 +37,13 @@ const TypedBios = () => {
         <li>I work mostly with React/Node and pure JS.</li>
         <li>I'm Tu Le's husband.</li>
         <li>
-          I'm a a wannabe farmer <Twemoji emoji="chicken" />
+          I'm a a wannabe farmer <Twemoji emoji="rooster" />
         </li>
         <li>
           I'm a sports-guy. I love
           <span className="ml-1">
             <Twemoji emoji="soccer-ball" />,
-            <Twemoji emoji="man-swimming" />,
-            <Twemoji emoji="ping-pong" />,
-            <Twemoji emoji="volleyball" />
+            <Twemoji emoji="man-running" />,
           </span>
         </li>
         <li>I love spending time with my family.</li>
