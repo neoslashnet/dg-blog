@@ -16,57 +16,18 @@ const timelineData = [
     role: 'Senior IT Systems Engineer',
     company: 'Nims and Associates',
     companyURL: 'https://nimsassociates.com/',
-    companyBio: '#1 web browser in Viet Nam with more than 25M users',
   },
   {
-    time: 'Aug 2018 - Apr 2020',
-    role: 'Fullstack Developer',
-    company: 'Pagefly',
-    companyURL: 'https://apps.shopify.com/pagefly',
-    companyBio: 'Top 3 Page Builder app on Shopify',
-    works: [
-      `Built Pagefly's Analytics APIs`,
-      <>
-        Built{' '}
-        <a target="_blank" rel="noopener noreferrer" href="https://github.com/sellersmith/slider-x">
-          Slider-x
-        </a>
-      </>,
-    ],
+    time: 'Apr 2013 - Nov 2017',
+    role: 'Senior Network Engineer',
+    company: 'KLH Consulting',
+    companyURL: 'https://klhconsulting.com/',
   },
   {
-    time: 'May 2017 - Jul 2018',
-    role: 'Coding Instructor and Developer',
-    company: 'MindX - Technology School',
-    companyURL: 'https://mindx.edu.vn/',
-    companyBio: '(aka Techkids)',
-    works: [
-      <>
-        Built{' '}
-        <a target="_blank" rel="noopener noreferrer" href="http://lok.vn">
-          Love of Knowledge
-        </a>{' '}
-        (Front-end part)
-      </>,
-      <>
-        Built{' '}
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://hta218.github.io/get-a-room-api-docs/"
-        >
-          Room Finder APIs
-        </a>
-      </>,
-      <>
-        Built{' '}
-        <a target="_blank" rel="noopener noreferrer" href="https://github.com/hta218/Travel_Egypt">
-          Travel Egypt
-        </a>{' '}
-        - a picture puzzle game made by pygame (Python)
-      </>,
-      'Tech Python fundamentals and Python web development',
-    ],
+    time: 'Dec 2010 - Apr 2013',
+    role: 'Engineer',
+    company: 'Portola Systems',
+    companyURL: 'https://portolasystems.net',  
   },
   {
     time: 'Sep 2013 - Feb 2019 (Move to Ha Noi city)',
