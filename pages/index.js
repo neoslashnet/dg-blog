@@ -51,14 +51,20 @@ export default function Home({ posts }) {
                 I'm writing this blog to note what I learn along the way
               </p>
               <div className="flex flex-col">
+                <Link href="/projects" className="hover:underline">
+                  <Twemoji emoji="hammer-and-wrench" /> What have I built?
+                </Link>
                 <Link href="/blog" className="hover:underline">
                   <Twemoji emoji="memo" /> My writings
+                </Link>
+                <Link href="/snippets" className="hover:underline">
+                  <Twemoji emoji="dna" /> Useful snippets collected by me
                 </Link>
                 <Link href="/about" className="hover:underline">
                   <Twemoji emoji="face-with-monocle" /> More about me and myself
                 </Link>
-                <Link href="https://galiata.com" className="hover:underline">
-                  <Twemoji emoji="globe" /> My personal site
+                <Link href="/resume" className="hover:underline">
+                  <Twemoji emoji="briefcase" /> My resume
                 </Link>
               </div>
               <p className="my-8">
@@ -135,7 +141,6 @@ export default function Home({ posts }) {
           </div>
         )}
       </div>
-    </> </div>
+    </>
   )
 }
- 
