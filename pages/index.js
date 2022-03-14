@@ -44,6 +44,11 @@ export default function Home({ posts }) {
               <p className="mt-4 mb-8">
               I write about IT, Cloud, and Security.
                 <br />
+                I had my first job as a Python coding mentor in 2017
+                <br />
+                I'm in love with the JS ecosystem, Web dev, and eCommerce
+                <br />
+                I'm writing this blog to note down and share what I've learned as a SE
               </p>
               <div className="flex flex-col">
                 <Link href="/projects" className="hover:underline">
