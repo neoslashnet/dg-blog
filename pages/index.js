@@ -44,11 +44,11 @@ export default function Home({ posts }) {
               <p className="mt-4 mb-8">
                 I started my career in 2006
                 <br />
-                I had my first job as a PC Technician
+                I hold industry wide certifications from AWS, Microsoft, VMWare, Cloud Security Alliance, and CompTIA
                 <br />
-                I went on and earned my stripes in consulting
+                I earned my stripes in corporate IT and consulting
                 <br />
-                I'm writing this blog to note and share what I learn along the way
+                I'm writing this blog to note and share what I learn
               </p>
               <div className="flex flex-col">
                 <Link href="/blog" className="hover:underline">
