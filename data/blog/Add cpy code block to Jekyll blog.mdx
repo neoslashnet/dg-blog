@@ -1,0 +1,124 @@
+---
+title: 'Add Copy to Clipboard Button to Jekyll Blog'
+date: '2022-03-09'
+tags: ['Jekyll' ]
+draft: false
+---
+![code image](https://res.cloudinary.com/dcu6gtw2y/image/upload/c_scale,h_600/v1646893762/Blog%20Pictures/4471284_y1fvmc.jpg)
+
+# Introduction
+
+Just about every site and blog that has code snippets has a "Copy" to clipboard button. It's extremely rare a site that includes lines of code doesn't have this. I recently took on a blog project for work and noticed the theme I chose did not include one. 
+
+Challenge accepted! 
+
+## The Moving Parts
+
+There are three key components to making this work:
+
+- Javascript file
+- Placing the js script into your post.html code
+- CSS 
+
+Below is a quick, high-level breakdown of the components.
+
+The Javascript file creates the "Copy" button. Running the scipt file from your post layout ensures the script will run against your blog posts. The final piece is customizing where the button is placed and color scheme. 
+
+### Javascript file
+
+You can name this what you'd like. In this example, I called it codeblock.js The file should be placed in /assets/js
+
+```js
+
+var codeBlocks = document.querySelectorAll('pre.highlight');
+
+codeBlocks.forEach(function (codeBlock) {
+  var copyButton = document.createElement('button');
+  copyButton.className = 'copy';
+  copyButton.type = 'button';
+  copyButton.ariaLabel = 'Copy code to clipboard';
+  copyButton.innerText = 'Copy';
+
+  codeBlock.append(copyButton);
+
+  copyButton.addEventListener('click', function () {
+    var code = codeBlock.querySelector('code').innerText.trim();
+    window.navigator.clipboard.writeText(code);
+
+    copyButton.innerText = 'Copied';
+    var fourSeconds = 4000;
+
+    setTimeout(function () {
+      copyButton.innerText = 'Copy';
+    }, fourSeconds);
+  });
+});
+``` 
+
+### Post HTML
+
+Place the following line just before the </body> tag in /_layouts/post.html 
+
+```html
+<script src="/assets/js/codeblock.js"></script>
+``` 
+
+### CSS 
+
+The final configuraiton piece is to customize CSS. I placed the button in the top right hand corner of the code snippet. Feel free to change the colors as you see fit.
+
+```js
+pre.highlight {
+    padding: 8px 12px;
+    position: relative;
+  
+    // override skeleton styles
+    > code {
+      border: 0;
+      overflow-x: auto;
+      padding-right: 0;
+      padding-left: 0;
+    }
+  
+    &.highlight {
+      border-left: 15px solid #35383c;
+      color: #c1c2c3;
+      overflow: auto;
+      white-space: pre;
+      word-wrap: normal;
+  
+      &,
+      code {
+        background-color: #222;
+        font-size: 14px;
+      }
+    }
+  
+    // copy code to clipboard
+    .copy {
+      color: #4AF626;
+      position: absolute;
+      right: 1.2rem;
+      top: 1.2rem;
+      opacity: 0;
+  
+      &:active,
+      &:focus,
+      &:hover {
+        background: rgba(0, 0, 0, 0.7);
+        opacity: 1;
+      }
+    }
+  
+    &:active .copy,
+    &:focus .copy,
+    &:hover .copy {
+      background: rgba(0, 0, 0, 0.7);
+      opacity: 1;
+    }
+  } 
+``` 
+
+# Conclusion 
+
+There you have it! You now should have a functioning "Copy" button in code snippets on your Jekyll blog. I hope this helps someone as there's some guidance out there but I couldn't find much that ties all the pieces together. 
