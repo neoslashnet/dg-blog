@@ -57,8 +57,8 @@ export default function Home({ posts }) {
                 <Link href="/about" className="hover:underline">
                   <Twemoji emoji="face-with-monocle" /> More about me and myself
                 </Link>
-                <Link href="/resume" className="hover:underline">
-                  <Twemoji emoji="briefcase" /> My resume
+                <Link href="https://galiata.com" className="hover:underline">
+                  <Twemoji emoji="globe" /> My personal site
                 </Link>
               </div>
               <p className="my-8">
@@ -138,3 +138,4 @@ export default function Home({ posts }) {
     </>
   )
 }
+ 
