@@ -42,14 +42,17 @@ const TypedBios = () => {
         <li>
           I'm a sports-guy. I love
           <span className="ml-1">
-            <Twemoji emoji="soccer-ball" />
+            <Twemoji emoji="soccer-ball" />,
+            <Twemoji emoji="football" />,
+            <Twemoji emoji="baseball" />,
+            <Twemoji emoji="basketballball" />
           </span>
         </li>
         <li>I love spending time with my family.</li>
         <li>
           I love music. <Twemoji emoji="guitar" />
         </li>
-        <li>I love pizza. </li>
+        <li>I love pizza. <Twemoji emoji="pizza" /> </li>
         <li>
           I love playing video games <Twemoji emoji="video-game" />, with my kids.
         </li>
