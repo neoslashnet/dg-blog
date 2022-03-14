@@ -51,14 +51,8 @@ export default function Home({ posts }) {
                 I'm writing this blog to note down and share what I've learned as a SE
               </p>
               <div className="flex flex-col">
-                <Link href="/projects" className="hover:underline">
-                  <Twemoji emoji="hammer-and-wrench" /> What have I built?
-                </Link>
                 <Link href="/blog" className="hover:underline">
                   <Twemoji emoji="memo" /> My writings
-                </Link>
-                <Link href="/snippets" className="hover:underline">
-                  <Twemoji emoji="dna" /> Useful snippets collected by me
                 </Link>
                 <Link href="/about" className="hover:underline">
                   <Twemoji emoji="face-with-monocle" /> More about me and myself
