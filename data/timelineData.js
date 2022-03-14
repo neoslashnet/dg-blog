@@ -1,13 +1,15 @@
 const timelineData = [
   {
-    time: 'Mar 2022 - now',
-    role: 'Self-employed',
+    time: 'Dec 2021 - now',
+    role: 'Security Architect',
+    company: 'Aquia',
+    companyURL: 'https://aquia.us/',
   },
   {
-    time: 'May 2021 - Feb 2022',
-    role: 'Software Engineer',
-    company: 'FoxEcom',
-    companyURL: 'https://foxecom.com/',
+    time: 'Jun 2021 - Dec 2021',
+    role: 'Senior Enterprise Network and Systems Consultant',
+    company: 'Cobaltix',
+    companyURL: 'https://cobaltix.com/',
     works: [
       <>
         Built{' '}
