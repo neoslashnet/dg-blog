@@ -42,15 +42,14 @@ export default function Home({ posts }) {
               </h1>
               <TypedBios />
               <p className="mt-4 mb-8">
-  I started my career in 2006
-  <br />
-  I hold industry wide certifications from AWS, Microsoft, VMWare, Cloud
-  Security Alliance, and CompTIA
-  <br />
-  I earned my stripes in corporate IT and consulting
-  <br />
-  I'm writing this blog to note and share what I learn
-</p>;
+                I started my career in 2006
+                <br />
+                I hold industry wide certifications from AWS, Microsoft, and VMWare
+                <br />
+                I earned my stripes in corporate IT and consulting
+                <br />
+                I'm writing this blog to note what I learn along the way
+              </p>
               <div className="flex flex-col">
                 <Link href="/blog" className="hover:underline">
                   <Twemoji emoji="memo" /> My writings
