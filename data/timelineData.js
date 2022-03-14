@@ -30,24 +30,30 @@ const timelineData = [
     companyURL: 'https://portolasystems.net',  
   },
   {
-    time: 'Sep 2013 - Feb 2019 (Move to Ha Noi city)',
-    role: 'Study Electronics and Telecommunications',
-    company: 'Hanoi University of Science and Technology',
-    companyURL: 'https://www.hust.edu.vn/',
+    time: 'Apr 2013 - Nov 2010',
+    role: 'Junior Systems Administrator',
+    company: 'Hansel Enterprises',
+    companyURL: 'https://gohansel.com/',
   },
   {
-    time: 'Before 2013',
+    time: 'Sep 2007 - Apr 2009',
+    role: 'NOC Technician',
+    company: 'Marketlive',
+    companyURL: 'https://kibocommerce.com/',
+  },
+  {
+    time: 'Before 2007',
     role: (
       <>
-        Grown up in{' '}
+        Studying IT and growing up in{' '}
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://en.wikipedia.org/wiki/M%E1%BB%99c_Ch%C3%A2u_District"
+          href="https://en.wikipedia.org/wiki/Sonoma_County,_California"
         >
-          Moc Chau
+          Sonoma
         </a>{' '}
-        District
+        County
       </>
     ),
   },
