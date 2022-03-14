@@ -28,7 +28,7 @@ export default function Home({ posts }) {
             <p
               className={`mb-8 text-4xl leading-[60px] font-extrabold tracking-tight text-transparent bg-clip-text ${headingColorClass} md:text-7xl md:leading-[86px]`}
             >
-              Welcome to my blog <i className="twa twa-waving-hand"></i>
+              Welcome <i className="twa twa-waving-hand"></i>
             </p>
 
             <div className="text-lg leading-8 text-gray-600 dark:text-gray-400">
