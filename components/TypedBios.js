@@ -40,19 +40,19 @@ const TypedBios = () => {
           I'm a wannabe farmer <Twemoji emoji="goat" />
         </li>
         <li>
-          I'm a sports-guy. I love
+          I'm a sport-guy. I love
           <span className="ml-1">
             <Twemoji emoji="soccer-ball" />,
             <Twemoji emoji="football" />,
-            <Twemoji emoji="basketball" />,
-            <Twemoji emoji="baseball" />
+            <Twemoji emoji="ping-pong" />,
+            <Twemoji emoji="volleyball" />
           </span>
         </li>
-        <li>I love spending time with my family.</li>
+        <li>I love watching football.</li>
         <li>
-          I'm a huge music fan <Twemoji emoji="guitar" />
+          I love playing guitar <Twemoji emoji="guitar" />
         </li>
-        <li>I love a good pizza.</li>
+        <li>I love rock music.</li>
         <li>
           I love playing video game <Twemoji emoji="video-game" />, PES is my favorite one.
         </li>
@@ -62,4 +62,4 @@ const TypedBios = () => {
   )
 }
 
-export default TypedBios        
+export default TypedBios
