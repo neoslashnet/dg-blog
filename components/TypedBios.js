@@ -22,36 +22,42 @@ const TypedBios = () => {
   return (
     <div>
       <ul id="bios" className="hidden">
-        <li>I'm a father, engineer, and learner.</li>
         <li>
-          I live in <b className="font-medium">the SF Bay Area</b>.
+          I'm aliased as <b className="font-medium">Leo</b> at work.
+        </li>
+        <li>I'm a builder, learner and freedom seeker.</li>
+        <li>
+          I live in <b className="font-medium">Ha Noi, Viet Nam</b>.
         </li>
         <li>
-          I was born in beautiful <b className="font-medium">Sonoma</b> County.
+          I was born in the beautiful <b className="font-medium">Moc Chau</b> plateau.
         </li>
         <li>
-          I fell in love with technology <b className="font-medium">when I was 8 years old</b>.
+          My first programming language I learned was <b className="font-medium">Pascal</b>.
         </li>
-        <li>I love the information technology field.</li>
-        <li>I'm currently focused on cloud security.</li>
-        <li>I work for a cybersecurity startup.</li>
-        <li>I'm dedicated to lifelong learning.</li>
+        <li>I love web development.</li>
+        <li>I'm focusing on building eCommerce softwares.</li>
+        <li>I work mostly with React/Node and pure JS.</li>
+        <li>I'm Tu Le's husband.</li>
         <li>
-          I'm a wannabe farmer <Twemoji emoji="goat" />
+          I'm a dog person <Twemoji emoji="dog" />
         </li>
         <li>
-          I'm a sports-guy. I love
+          I'm a sport-guy. I love
           <span className="ml-1">
-          <Twemoji emoji="soccer-ball" />
+            <Twemoji emoji="soccer-ball" />,
+            <Twemoji emoji="man-swimming" />,
+            <Twemoji emoji="ping-pong" />,
+            <Twemoji emoji="volleyball" />
           </span>
         </li>
-        <li>I enjoy spending time with my family.</li>
+        <li>I love watching football.</li>
         <li>
-          I love music <Twemoji emoji="guitar" />
+          I love playing guitar <Twemoji emoji="guitar" />
         </li>
-        <li>I love a good pizza.</li>
+        <li>I love rock music.</li>
         <li>
-          I love playing video games <Twemoji emoji="video-game" />, with my kids.
+          I love playing video game <Twemoji emoji="video-game" />, PES is my favorite one.
         </li>
       </ul>
       <span ref={el} className="text-neutral-900 dark:text-neutral-200" />
