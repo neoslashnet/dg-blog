@@ -32,7 +32,7 @@ const TypedBios = () => {
         <li>
           I fell in love with technology <b className="font-medium">when I was 8 years old</b>.
         </li>
-        <li>I love .</li>
+        <li>I love the information technology field.</li>
         <li>I'm currently focused on cloud security.</li>
         <li>I work for a cybersecurity startup.</li>
         <li>I'm dedicated to lifelong learning.</li>
@@ -44,16 +44,17 @@ const TypedBios = () => {
           <span className="ml-1">
             <Twemoji emoji="soccer-ball" />,
             <Twemoji emoji="football" />,
-            <Twemoji emoji="baseball" />,
-            <Twemoji emoji="basketball" />
+            <Twemoji emoji="basketball" />,
+            <Twemoji emoji="baseball" />
           </span>
         </li>
         <li>I love spending time with my family.</li>
-        <li>I love music. <Twemoji emoji="guitar" />
-        </li>
-        <li>I love pizza. </li>
         <li>
-          I love playing video games <Twemoji emoji="video-game" />, with my kids.
+          I'm a huge music fan <Twemoji emoji="guitar" />
+        </li>
+        <li>I love a good pizza.</li>
+        <li>
+          I love playing video game <Twemoji emoji="video-game" />, PES is my favorite one.
         </li>
       </ul>
       <span ref={el} className="text-neutral-900 dark:text-neutral-200" />
@@ -61,4 +62,4 @@ const TypedBios = () => {
   )
 }
 
-export default TypedBios
+export default TypedBios        
