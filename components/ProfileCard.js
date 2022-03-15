@@ -76,8 +76,6 @@ const ProfileCard = () => {
   )
 }
 
-
-
 const ProfileInfo = () => (
   <div className="hidden xl:block xl:px-6 py-4">
     <h1 className="text-xl font-semibold text-gray-800 dark:text-white">David Galiata</h1>
