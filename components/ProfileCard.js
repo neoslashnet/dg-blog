@@ -6,7 +6,7 @@ import Twemoji from './Twemoji'
 import Link from 'next/link'
 
 const ProfileCard = () => {
-  const { data } = useSWR('/api/spotify', fetcher)
+  //const { data } = useSWR('/api/spotify', fetcher)
 
   const ref = useRef(null)
   const [style, setStyle] = useState({})
@@ -67,7 +67,7 @@ const ProfileCard = () => {
             className="object-cover"
             objectPosition="50% 16%"
           />
-          <Spotify data={data} />
+         <Spotify data={data} />
           <ProfileInfo />
           <span className="h-1.5 bg-gradient-to-r from-gray-900 via-green-500 to-gray-700"></span>
         </div>
