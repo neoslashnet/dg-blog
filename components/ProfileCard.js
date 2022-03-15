@@ -67,7 +67,6 @@ const ProfileCard = () => {
             className="object-cover"
             objectPosition="50% 16%"
           />
-          <Spotify data={data} />
           <ProfileInfo />
           <span className="h-1.5 bg-gradient-to-r from-gray-900 via-green-500 to-gray-700"></span>
         </div>
