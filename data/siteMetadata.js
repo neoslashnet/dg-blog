@@ -9,7 +9,7 @@ const siteMetadata = {
   language: 'en-us',
   siteUrl: 'https://neoslash.net',
   siteRepo: 'https://github.com/hta218/leo-blog',
-  //siteLogo: '/static/images/logo.jpg',
+  siteLogo: '/static/images/logo.jpg',
   image: '/static/images/logo.jpg',
   socialBanner: '/static/images/logo.jpg',
   email: 'david@neoslash.net',
@@ -69,7 +69,7 @@ const siteMetadata = {
     },
   },
   socialAccount: {
-    twitter: 'hta218_',
+    twitter: 'neoslashnet',
   },
 }
 
