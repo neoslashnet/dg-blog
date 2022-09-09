@@ -3,13 +3,13 @@ import Script from 'next/script'
 const SimpleAnalyticsScript = () => {
   return (
     <>
-      <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "dl0ly56clg");
-</script>
+      <Script strategy="lazyOnload" id="sa-script">
+        {`
+            window.sa_event=window.sa_event||function(){var a=[].slice.call(arguments);window.sa_event.q?window.sa_event.q.push(a):window.sa_event.q=[a]};
+        `}
+      </Script>
+      <Script strategy="lazyOnload" src="https://scripts.simpleanalyticscdn.com/latest.js" />
+    </>
   )
 }
 
