@@ -8,6 +8,7 @@ summary: macOS xcrun error
 I recently upgraded my OS and ran into this error when I tried any git operation on my macbook. 
 
 ```
+git
 $ git pull
 xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools),
 missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
@@ -15,11 +16,13 @@ missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
 After doing some research, I found the fix is pretty straight forward. Install the Xcode toolkit! Even if you had it installed before, you might have to re-register it or update it to the latest version.
 
 ```
+git
 $ xcode-select --install
 ``` 
 If that doesn’t work, force it to reset. You’ll need sudo access for this one.
 
 ```
+git
 $ sudo xcode-select --reset
 ``` 
 If that fails, go to the Apple[developer download section](https://developer.apple.com/download/more/)and download Xcode manually.
