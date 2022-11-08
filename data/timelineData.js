@@ -30,7 +30,7 @@ const timelineData = [
     companyURL: 'https://portolasystems.net',  
   },
   {
-    time: 'Apr 2013 - Nov 2010',
+    time: 'Apr 2009 - Nov 2010',
     role: 'Junior Systems Administrator',
     company: 'Hansel Enterprises',
     companyURL: 'https://gohansel.com/',
