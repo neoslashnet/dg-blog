@@ -11,7 +11,7 @@ const siteMetadata = {
   //siteRepo: 'https://github.com/hta218/leo-blog',
   siteLogo: '/static/images/logo.jpg',
   image: '/static/images/logo.jpg',
-  socialBanner: '/static/images/banner.jpg',
+  socialBanner: '/static/images/socialbanner.jpg',
   email: 'david@neoslash.net',
   github: 'https://github.com/neoslashnet',
   twitter: 'https://twitter.com/neoslashnet',
