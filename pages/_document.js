@@ -28,6 +28,7 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
           <script async src="//static.getclicky.com/101386840.js"></script>
+          <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101386840ns.gif" /></p></noscript>
         </body>
       </Html>
     )
