@@ -78,7 +78,7 @@ const ProfileCard = () => {
 const ProfileInfo = () => (
   <div className="hidden xl:block xl:px-6 py-4">
     <h1 className="text-xl font-semibold text-gray-800 dark:text-white">David Galiata</h1>
-    <p className="py-2 text-gray-700 dark:text-gray-400">Father | Blogger | Perpetual Learner</p>
+    <p className="py-2 text-gray-700 dark:text-gray-400">Father | Blogger | Learner</p>
     <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200">
       <svg
         xmlns="http://www.w3.org/2000/svg"
