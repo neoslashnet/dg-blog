@@ -22,7 +22,7 @@ const TypedBios = () => {
   return (
     <div>
       <ul id="bios" className="hidden">
-        <li>I'm a father, engineer, and learner.</li>
+        <li>I'm a father, blogger, and learner.</li>
         <li>
           I live in the <b className="font-medium">SF Bay Area</b>.
         </li>
