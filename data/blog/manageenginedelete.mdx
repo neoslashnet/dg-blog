@@ -1,0 +1,29 @@
+---
+title: 'How To Uninstall the ManageEngine agent on macOS'
+date: '2023-02-27'
+tags: ['macOS' ]
+draft: false
+summary:
+---
+
+# Introducton
+My employer recently ran a trial of the ManageEngine Desktop Central UEM product. We decided not to continue the trial and I logged into the console to uninstall the agent. Unfortunately the user interface was locked down and required an extention. I couldn't get immediate access to the console so I had to go command line! 
+
+# Recommended Method
+ManageEngine has a couple of knowledge base articles written up on this topic but I don't think it's updated for macOS Ventura. The steps recommended by ManageEngine are below:
+
+- Login into the computer as administrator and open the terminal.
+- Navigate to the directory /Library/DesktopCentral_Agent/uninstall
+- Type sudo chmod 744 uninstall.sh, and enter administrator password when prompted.
+- Type the command sudo ./uninstall.sh, this command removes all the files except logs.
+
+Unfortunately for me, I do not have directory- /Library/DesktopCentral_Agent/uninstall
+
+# My Fix
+After browsing the web, I ran across a comment on a thread in a forum that suggested to remove the agent folder completely and reboot. The command below worked for me and I no longer have the agent installed. 
+
+'''bash
+sudo rm -rf DesktopCentral_Agent
+'''
+
+
