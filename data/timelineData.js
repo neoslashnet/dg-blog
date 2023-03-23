@@ -1,7 +1,7 @@
 const timelineData = [
   {
     time: 'Dec 2021 - now',
-    role: 'Security Architect',
+    role: 'Sr. Security Architect',
     company: 'Aquia',
     companyURL: 'https://aquia.us/',
   },
