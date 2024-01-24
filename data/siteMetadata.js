@@ -14,7 +14,7 @@ const siteMetadata = {
   socialBanner: '/static/images/socialbanner.jpg',
   email: 'david@neoslash.net',
   github: 'https://github.com/neoslashnet',
-  twitter: 'https://twitter.com/neoslashnet',
+  //twitter: 'https://twitter.com/neoslashnet',
   //facebook: 'https://facebook.com/hta218',
   //youtube: 'https://www.youtube.com/channel/UCHXjj6ewfDIjx_Op3hqijlg',
   linkedin: 'https://www.linkedin.com/in/dgaliata/',
@@ -69,7 +69,7 @@ const siteMetadata = {
     },
   },
   socialAccount: {
-    twitter: 'neoslashnet',
+   // twitter: 'neoslashnet',
   },
 }
 
