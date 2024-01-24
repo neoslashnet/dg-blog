@@ -165,8 +165,8 @@ const ProfileInfo = () => (
           li/dgaliata
         </a>
         ,{' '}
-        <a target="_blank" href="https://twitter.com/neoslashnet" rel="noreferrer">
-          tw/neoslashnet
+        <a target="_blank" href="https://galiata.com" rel="noreferrer">
+          web/galiata.com
         </a>
       </p>
     </div>
